@@ -6,7 +6,7 @@
   <link href="Wang-Ben.github.io/atom.xml" rel="self"/>
   
   <link href="https://Wang-Ben.github.io/"/>
-  <updated>2019-01-02T05:09:48.602Z</updated>
+  <updated>2019-01-03T16:33:29.176Z</updated>
   <id>https://Wang-Ben.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://Wang-Ben.github.io/2019/01/02/hello-world/"/>
-    <id>https://Wang-Ben.github.io/2019/01/02/hello-world/</id>
-    <published>2019-01-02T05:09:48.598Z</published>
-    <updated>2019-01-02T05:09:48.602Z</updated>
+    <title>Servlet入门</title>
+    <link href="https://Wang-Ben.github.io/2019/01/04/servlet1/"/>
+    <id>https://Wang-Ben.github.io/2019/01/04/servlet1/</id>
+    <published>2019-01-03T16:12:43.000Z</published>
+    <updated>2019-01-03T16:33:29.176Z</updated>
     
     <summary type="html">
     
@@ -29,12 +29,18 @@
       
         
         
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. web相关概念回顾
+2. web服务器软件：Tomcat
+3.
         
       
     
     </summary>
     
+      <category term="web基础" scheme="https://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="-Servlet" scheme="https://Wang-Ben.github.io/tags/Servlet/"/>
     
   </entry>
   
