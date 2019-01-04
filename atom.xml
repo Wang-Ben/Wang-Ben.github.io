@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Wang-Ben.github.io/"/>
-  <updated>2019-01-04T16:25:06.037Z</updated>
+  <updated>2019-01-04T16:27:24.460Z</updated>
   <id>http://Wang-Ben.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://Wang-Ben.github.io/2019/01/04/servlet2/"/>
     <id>http://Wang-Ben.github.io/2019/01/04/servlet2/</id>
     <published>2019-01-04T14:28:24.000Z</published>
-    <updated>2019-01-04T16:25:06.037Z</updated>
+    <updated>2019-01-04T16:27:24.460Z</updated>
     
     <summary type="html">
     
@@ -32,7 +32,7 @@
           &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 
 
-&lt;p&gt;&lt;img src=&quot;../images/image.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/image.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Servlet：&quot;&gt;&lt;a href=&quot;#Servlet：&quot;
         
       
