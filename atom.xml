@@ -6,7 +6,7 @@
   <link href="Wang-Ben.github.io/atom.xml" rel="self"/>
   
   <link href="https://Wang-Ben.github.io/"/>
-  <updated>2019-01-03T16:33:29.176Z</updated>
+  <updated>2019-01-04T14:39:18.459Z</updated>
   <id>https://Wang-Ben.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Servlet(二)</title>
+    <link href="https://Wang-Ben.github.io/2019/01/04/servlet2/"/>
+    <id>https://Wang-Ben.github.io/2019/01/04/servlet2/</id>
+    <published>2019-01-04T14:28:24.000Z</published>
+    <updated>2019-01-04T14:39:18.459Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Servlet：&quot;&gt;&lt;a href=&quot;#Servlet：&quot; class=&quot;headerlink&quot; title=&quot;Servlet：&quot;&gt;&lt;/a&gt;Servlet：&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. 概念
+2. 步骤
+3. 执行原理
+4. 生命周期
+5.
+        
+      
+    
+    </summary>
+    
+      <category term="web基础" scheme="https://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Servlet" scheme="https://Wang-Ben.github.io/tags/Servlet/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Servlet入门</title>
     <link href="https://Wang-Ben.github.io/2019/01/04/servlet1/"/>
     <id>https://Wang-Ben.github.io/2019/01/04/servlet1/</id>
     <published>2019-01-03T16:12:43.000Z</published>
-    <updated>2019-01-03T16:33:29.176Z</updated>
+    <updated>2019-01-04T14:31:10.981Z</updated>
     
     <summary type="html">
     
@@ -40,7 +70,7 @@
       <category term="web基础" scheme="https://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="-Servlet" scheme="https://Wang-Ben.github.io/tags/Servlet/"/>
+      <category term="Servlet" scheme="https://Wang-Ben.github.io/tags/Servlet/"/>
     
   </entry>
   
