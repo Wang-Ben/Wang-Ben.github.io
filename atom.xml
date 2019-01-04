@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://wangben.fun/"/>
+  <link href="http://Wang-Ben.github.io/"/>
   <updated>2019-01-04T16:11:27.861Z</updated>
-  <id>http://wangben.fun/</id>
+  <id>http://Wang-Ben.github.io/</id>
   
   <author>
     <name>ben</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Servlet(二)</title>
-    <link href="http://wangben.fun/2019/01/04/servlet2/"/>
-    <id>http://wangben.fun/2019/01/04/servlet2/</id>
+    <link href="http://Wang-Ben.github.io/2019/01/04/servlet2/"/>
+    <id>http://Wang-Ben.github.io/2019/01/04/servlet2/</id>
     <published>2019-01-04T14:28:24.000Z</published>
     <updated>2019-01-04T16:11:27.861Z</updated>
     
@@ -36,17 +36,17 @@
     
     </summary>
     
-      <category term="web基础" scheme="http://wangben.fun/categories/web%E5%9F%BA%E7%A1%80/"/>
+      <category term="web基础" scheme="http://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="Servlet" scheme="http://wangben.fun/tags/Servlet/"/>
+      <category term="Servlet" scheme="http://Wang-Ben.github.io/tags/Servlet/"/>
     
   </entry>
   
   <entry>
     <title>Servlet入门</title>
-    <link href="http://wangben.fun/2019/01/04/servlet1/"/>
-    <id>http://wangben.fun/2019/01/04/servlet1/</id>
+    <link href="http://Wang-Ben.github.io/2019/01/04/servlet1/"/>
+    <id>http://Wang-Ben.github.io/2019/01/04/servlet1/</id>
     <published>2019-01-03T16:12:43.000Z</published>
     <updated>2019-01-04T14:31:10.981Z</updated>
     
@@ -64,10 +64,10 @@
     
     </summary>
     
-      <category term="web基础" scheme="http://wangben.fun/categories/web%E5%9F%BA%E7%A1%80/"/>
+      <category term="web基础" scheme="http://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="Servlet" scheme="http://wangben.fun/tags/Servlet/"/>
+      <category term="Servlet" scheme="http://Wang-Ben.github.io/tags/Servlet/"/>
     
   </entry>
   
