@@ -384,7 +384,10 @@ DOM简单学习：为了满足案例要求* 功能：控制html文档的内容
                 var light2 = document.getElementById(&quot;light2&quot;);
                 //2.绑定事件
                 light2.onclick = fun2;
-</code></pre><p>​<br>                <br>            </p>
+
+            &lt;/script&gt;
+        &lt;/body&gt;
+</code></pre><p>​        </p>
 <pre><code>* 案例1：电灯开关
     &lt;!DOCTYPE html&gt;
     &lt;html lang=&quot;en&quot;&gt;
@@ -427,15 +430,18 @@ DOM简单学习：为了满足案例要求* 功能：控制html文档的内容
                 light.src = &quot;img/on.gif&quot;;
                 flag = true;
             }
-</code></pre><p>​<br>            }</p>
-<pre><code>    &lt;/script&gt;
+        }
+    &lt;/script&gt;
     &lt;/body&gt;
     &lt;/html&gt;
 </code></pre><h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM:"></a>BOM:</h1><p><img src="..\images\bom对象介绍.png" alt=""></p>
-<pre><code>1. 概念：Browser Object Model 浏览器对象模型
-    * 将浏览器的各个组成部分封装成对象。
-
-2. 组成：
+<p><img src="\images\bom对象介绍.png" alt="">    </p>
+<ol>
+<li><p>概念：Browser Object Model 浏览器对象模型</p>
+<pre><code>     * 将浏览器的各个组成部分封装成对象。
+</code></pre></li>
+</ol>
+<pre><code>2. 组成：
     * Window：窗口对象
     * Navigator：浏览器对象
     * Screen：显示器屏幕对象
@@ -510,6 +516,7 @@ DOM简单学习：为了满足案例要求* 功能：控制html文档的内容
     3. 属性：
         * length    返回当前窗口历史列表中的 URL 数量。
 </code></pre><h2 id="DOM："><a href="#DOM：" class="headerlink" title="DOM："></a>DOM：</h2><p><img src="..\images\DOM树.bmp" alt=""></p>
+<p><img src="\images\DOM树.bmp" alt=""></p>
 <pre><code>* 概念： Document Object Model 文档对象模型
     * 将标记语言文档的各个组成部分，封装为对象。可以使用这些对象，对标记语言文档进行CRUD的动态操作
 
