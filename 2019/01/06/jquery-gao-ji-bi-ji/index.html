@@ -5,11 +5,16 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaScript基础, Hexo">
-    <meta name="description" content="目录1. JavaScript基础
-JavaScript：* 概念：    一门客户端脚本语言
-    * 运行在客户端浏览器中的。每一个浏览器都有JavaScript的解析引擎
-    * 脚本语言：不需要编译，直接就可以被浏览器解析执行">
+    <meta name="keywords" content="JQuery入门, Hexo">
+    <meta name="description" content="目录：1. JQuery 高级
+    1. 动画
+    2. 遍历
+    3. 事件绑定
+    4. 案例
+    5. 插件
+JQuery 高级1. 动画
+    1. 三种方式显示和隐藏元素
+        1. 默认显示和隐藏">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +22,7 @@ JavaScript：* 概念：    一门客户端脚本语言
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>JavaScript基础 | Hexo</title>
+    <title>JQuery入门 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -276,13 +281,13 @@ JavaScript：* 概念：    一门客户端脚本语言
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        JavaScript基础
+                        JQuery入门
                     </div>
                 </div>
             </div>
@@ -302,8 +307,8 @@ JavaScript：* 概念：    一门客户端脚本语言
             
             <div class="article-tag">
                 
-                <a href="/tags/JavaScript/" target="_blank">
-                    <span class="chip bg-color">JavaScript</span>
+                <a href="/tags/JQuery/" target="_blank">
+                    <span class="chip bg-color">JQuery</span>
                 </a>
                 
             </div>
@@ -322,7 +327,7 @@ JavaScript：* 概念：    一门客户端脚本语言
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-01-05
+                    <i class="fa fa-clock-o fa-fw"></i>2019-01-06
                 </span>
 				
 				
@@ -334,259 +339,204 @@ JavaScript：* 概念：    一门客户端脚本语言
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><pre><code>1. JavaScript基础
-</code></pre><h2 id="JavaScript："><a href="#JavaScript：" class="headerlink" title="JavaScript："></a>JavaScript：</h2><pre><code>* 概念：    一门客户端脚本语言
-    * 运行在客户端浏览器中的。每一个浏览器都有JavaScript的解析引擎
-    * 脚本语言：不需要编译，直接就可以被浏览器解析执行了
+                <h2 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h2><pre><code>1. JQuery 高级
+    1. 动画
+    2. 遍历
+    3. 事件绑定
+    4. 案例
+    5. 插件
+</code></pre><h2 id="JQuery-高级"><a href="#JQuery-高级" class="headerlink" title="JQuery 高级"></a>JQuery 高级</h2><pre><code>1. 动画
+    1. 三种方式显示和隐藏元素
+        1. 默认显示和隐藏方式
+            1. show([speed,[easing],[fn]])
+                1. 参数：
+                    1. speed：动画的速度。三个预定义的值(&quot;slow&quot;,&quot;normal&quot;, &quot;fast&quot;)或表示动画时长的毫秒数值(如：1000)
+                    2. easing：用来指定切换效果，默认是&quot;swing&quot;，可用参数&quot;linear&quot;
+                        * swing：动画执行时效果是 先慢，中间快，最后又慢
+                        * linear：动画执行时速度是匀速的
+                    3. fn：在动画完成时执行的函数，每个元素执行一次。
 
-* 功能：
-    * 可以来增强用户和html页面的交互过程，可以来控制html元素，让页面有一些动态的效果，增强用户的体验。
+            2. hide([speed,[easing],[fn]])
+            3. toggle([speed],[easing],[fn])
 
-* JavaScript发展史：
-    1. 1992年，Nombase公司，开发出第一门客户端脚本语言，专门用于表单的校验。命名为 ： C--    ，后来更名为：ScriptEase
-    2. 1995年，Netscape(网景)公司，开发了一门客户端脚本语言：LiveScript。后来，请来SUN公司的专家，修改LiveScript，命名为JavaScript
-    3. 1996年，微软抄袭JavaScript开发出JScript语言
-    4. 1997年，ECMA(欧洲计算机制造商协会)，制定出客户端脚本语言的标准：ECMAScript，就是统一了所有客户端脚本语言的编码方式。
+        2. 滑动显示和隐藏方式
+            1. slideDown([speed],[easing],[fn])
+            2. slideUp([speed,[easing],[fn]])
+            3. slideToggle([speed],[easing],[fn])
 
-    * JavaScript = ECMAScript + JavaScript自己特有的东西(BOM+DOM)
-
-* ECMAScript：客户端脚本语言的标准
-    1. 基本语法：
-        1. 与html结合方式
-            1. 内部JS：
-                * 定义&lt;script&gt;，标签体内容就是js代码
-            2. 外部JS：
-                * 定义&lt;script&gt;，通过src属性引入外部的js文件
-
-            * 注意：
-                1. &lt;script&gt;可以定义在html页面的任何地方。但是定义的位置会影响执行顺序。
-                2. &lt;script&gt;可以定义多个。
-        2. 注释
-            1. 单行注释：//注释内容
-            2. 多行注释：/*注释内容*/
-        3. 数据类型：
-            1. 原始数据类型(基本数据类型)：
-                1. number：数字。 整数/小数/NaN(not a number 一个不是数字的数字类型)
-                2. string：字符串。 字符串  &quot;abc&quot; &quot;a&quot; &#39;abc&#39;
-                3. boolean: true和false
-                4. null：一个对象为空的占位符
-                5. undefined：未定义。如果一个变量没有给初始化值，则会被默认赋值为undefined
-
-            2. 引用数据类型：对象
-
-        4. 变量
-            * 变量：一小块存储数据的内存空间
-            * Java语言是强类型语言，而JavaScript是弱类型语言。
-                * 强类型：在开辟变量存储空间时，定义了空间将来存储的数据的数据类型。只能存储固定类型的数据
-                * 弱类型：在开辟变量存储空间时，不定义空间将来的存储数据类型，可以存放任意类型的数据。
-            * 语法：
-                * var 变量名 = 初始化值;
-
-            * typeof运算符：获取变量的类型。
-                * 注：null运算后得到的是object
-        5. 运算符
-            1. 一元运算符：只有一个运算数的运算符
-                ++，-- ， +(正号)  
-                * ++ --: 自增(自减)
-                    * ++(--) 在前，先自增(自减)，再运算
-                    * ++(--) 在后，先运算，再自增(自减)
-                * +(-)：正负号
-                * 注意：在JS中，如果运算数不是运算符所要求的类型，那么js引擎会自动的将运算数进行类型转换
-                    * 其他类型转number：
-                        * string转number：按照字面值转换。如果字面值不是数字，则转为NaN（不是数字的数字）
-                        * boolean转number：true转为1，false转为0
-            2. 算数运算符
-                + - * / % ...
-
-            3. 赋值运算符
-                = += -+....
-
-            4. 比较运算符
-                &gt; &lt; &gt;= &lt;= == ===(全等于)
-                * 比较方式
-                  1. 类型相同：直接比较
-                      * 字符串：按照字典顺序比较。按位逐一比较，直到得出大小为止。
-                  2. 类型不同：先进行类型转换，再比较
-                      * ===：全等于。在比较之前，先判断类型，如果类型不一样，则直接返回false
+        3. 淡入淡出显示和隐藏方式
+            1. fadeIn([speed],[easing],[fn])
+            2. fadeOut([speed],[easing],[fn])
+            3. fadeToggle([speed,[easing],[fn]])
 
 
-            5. 逻辑运算符
-                &amp;&amp; || !
-                * 其他类型转boolean：
-                   1. number：0或NaN为假，其他为真
-                   2. string：除了空字符串(&quot;&quot;)，其他都是true
-                   3. null&amp;undefined:都是false
-                   4. 对象：所有对象都为true
+2. 遍历
+    1. js的遍历方式
+        * for(初始化值;循环结束条件;步长)
+    2. jq的遍历方式
+        1. jq对象.each(callback)
+            1. 语法：
+                jquery对象.each(function(index,element){});
+                    * index:就是元素在集合中的索引
+                    * element：就是集合中的每一个元素对象
 
-            6. 三元运算符
-                ? : 表达式
-                var a = 3;
-                var b = 4;
+                    * this：集合中的每一个元素对象
+            2. 回调函数返回值：
+                * true:如果当前function返回为false，则结束循环(break)。
+                * false:如果当前function返回为true，则结束本次循环，继续下次循环(continue)
+        2. $.each(object, [callback])
+        3. for..of: jquery 3.0 版本之后提供的方式
+            for(元素对象 of 容器对象)
 
-                var c = a &gt; b ? 1:0;
-                * 语法：
-                    * 表达式? 值1:值2;
-                    * 判断表达式的值，如果是true则取值1，如果是false则取值2；
+3. 事件绑定
+    1. jquery标准的绑定方式
+        * jq对象.事件方法(回调函数)；
+        * 注：如果调用事件方法，不传递回调函数，则会触发浏览器默认行为。
+            * 表单对象.submit();//让表单提交
+    2. on绑定事件/off解除绑定
+        * jq对象.on(&quot;事件名称&quot;,回调函数)
+        * jq对象.off(&quot;事件名称&quot;)
+            * 如果off方法不传递任何参数，则将组件上的所有事件全部解绑
+    3. 事件切换：toggle
+        * jq对象.toggle(fn1,fn2...)
+            * 当单击jq对象对应的组件后，会执行fn1.第二次点击会执行fn2.....
 
-        6. 流程控制语句：
-            1. if...else...
-            2. switch:
-                * 在java中，switch语句可以接受的数据类型： byte int shor char,枚举(1.5) ,String(1.7)
-                    * switch(变量):
-                        case 值:
-                * 在JS中,switch语句可以接受任意的原始数据类型
-            3. while
-            4. do...while
-            5. for
-        7. JS特殊语法：
-            1. 语句以;结尾，如果一行只有一条语句则 ;可以省略 (不建议)
-            2. 变量的定义使用var关键字，也可以不使用
-                * 用： 定义的变量是局部变量
-                * 不用：定义的变量是全局变量(不建议)
+        * 注意：1.9版本 .toggle() 方法删除,jQuery Migrate（迁移）插件可以恢复此功能。
+             &lt;script src=&quot;../js/jquery-migrate-1.0.0.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 
-        8. 练习：99乘法表
+
+4. 案例
+    1. 广告显示和隐藏
         &lt;!DOCTYPE html&gt;
-        &lt;html lang=&quot;en&quot;&gt;
+        &lt;html&gt;
         &lt;head&gt;
             &lt;meta charset=&quot;UTF-8&quot;&gt;
-            &lt;title&gt;99乘法表&lt;/title&gt;
+            &lt;title&gt;广告的自动显示与隐藏&lt;/title&gt;
             &lt;style&gt;
-                td{
-                    border: 1px solid;
-                }
-
+                #content{width:100%;height:500px;background:#999}
             &lt;/style&gt;
 
+            &lt;!--引入jquery--&gt;
+            &lt;script type=&quot;text/javascript&quot; src=&quot;../js/jquery-3.3.1.min.js&quot;&gt;&lt;/script&gt;
             &lt;script&gt;
+                /*
+                    需求：
+                        1. 当页面加载完，3秒后。自动显示广告
+                        2. 广告显示5秒后，自动消失。
 
-                document.write(&quot;&lt;table  align=&#39;center&#39;&gt;&quot;);
-</code></pre><p>​<br>                    //1.完成基本的for循环嵌套，展示乘法表<br>                    for (var i = 1; i &lt;= 9 ; i++) {<br>                        document.write(“<tr>“);<br>                        for (var j = 1; j &lt;=i ; j++) {<br>                            document.write(“<td>“);</td></tr></p>
-<pre><code>                        //输出  1 * 1 = 1
-                        document.write(i + &quot; * &quot; + j + &quot; = &quot; + ( i*j) +&quot;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;);
+                    分析：
+                        1. 使用定时器来完成。setTimeout (执行一次定时器)
+                        2. 分析发现JQuery的显示和隐藏动画效果其实就是控制display
+                        3. 使用  show/hide方法来完成广告的显示
+                 */
 
-                        document.write(&quot;&lt;/td&gt;&quot;);
-                    }
-                    /*//输出换行
-                    document.write(&quot;&lt;br&gt;&quot;);*/
-
-                    document.write(&quot;&lt;/tr&gt;&quot;);
+                //入口函数，在页面加载完成之后，定义定时器，调用这两个方法
+                $(function () {
+                   //定义定时器，调用adShow方法 3秒后执行一次
+                   setTimeout(adShow,3000);
+                   //定义定时器，调用adHide方法，8秒后执行一次
+                    setTimeout(adHide,8000);
+                });
+                //显示广告
+                function adShow() {
+                    //获取广告div，调用显示方法
+                    $(&quot;#ad&quot;).show(&quot;slow&quot;);
                 }
-
-                //2.完成表格嵌套
-                document.write(&quot;&lt;/table&gt;&quot;);
-
-            &lt;/script&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-
+                //隐藏广告
+                function adHide() {
+                    //获取广告div，调用隐藏方法
+                    $(&quot;#ad&quot;).hide(&quot;slow&quot;);
+                }
+</code></pre><p>​<br>​<br>                <br>            <br>            <body><br>            <!-- 整体的DIV --><br>            <div><br>                <!-- 广告DIV --><br>                <div id="ad" style="display: none;"><br>                    <img style="width:100%" src="../img/adv.jpg"><br>                </div></div></body></p>
+<pre><code>            &lt;!-- 下方正文部分 --&gt;
+            &lt;div id=&quot;content&quot;&gt;
+                正文部分
+            &lt;/div&gt;
+        &lt;/div&gt;
         &lt;/body&gt;
         &lt;/html&gt;
 
-    2. 基本对象：
-        1. Function：函数(方法)对象
-            1. 创建：
-                1. var fun = new Function(形式参数列表,方法体);  //忘掉吧
-                2. 
-                    function 方法名称(形式参数列表){
-                        方法体
-                    }
 
-                3. 
-                   var 方法名 = function(形式参数列表){
-                        方法体
-                   }
-            2. 方法：
 
-            3. 属性：
-                length:代表形参的个数
-            4. 特点：
-                1. 方法定义是，形参的类型不用写,返回值类型也不写。
-                2. 方法是一个对象，如果定义名称相同的方法，会覆盖
-                3. 在JS中，方法的调用只与方法的名称有关，和参数列表无关
-                4. 在方法声明中有一个隐藏的内置对象（数组），arguments,封装所有的实际参数
-            5. 调用：
-                方法名称(实际参数列表);
+    2. 抽奖
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+            &lt;meta charset=&quot;UTF-8&quot;&gt;
+            &lt;title&gt;jquery案例之抽奖&lt;/title&gt;
+            &lt;script type=&quot;text/javascript&quot; src=&quot;../js/jquery-3.3.1.min.js&quot;&gt;&lt;/script&gt;
 
-        2. Array:数组对象
-            1. 创建：
-                1. var arr = new Array(元素列表);
-                2. var arr = new Array(默认长度);
-                3. var arr = [元素列表];
-            2. 方法
-                join(参数):将数组中的元素按照指定的分隔符拼接为字符串
-                push()    向数组的末尾添加一个或更多元素，并返回新的长度。
-            3. 属性
-                length:数组的长度
-            4. 特点：
-                1. JS中，数组元素的类型可变的。
-                2. JS中，数组长度可变的。
-        3. Boolean
-        4. Date：日期对象
-            1. 创建：
-                var date = new Date();
+            &lt;script language=&#39;javascript&#39; type=&#39;text/javascript&#39;&gt;
 
-            2. 方法：
-                toLocaleString()：返回当前date对象对应的时间本地字符串格式
-                getTime():获取毫秒值。返回当前如期对象描述的时间到1970年1月1日零点的毫秒值差
-        5. Math：数学对象
-            1. 创建：
-                * 特点：Math对象不用创建，直接使用。  Math.方法名();
+                /*
+                    分析：
+                        1. 给开始按钮绑定单击事件
+                            1.1 定义循环定时器
+                            1.2 切换小相框的src属性
+                                * 定义数组，存放图片资源路径
+                                * 生成随机数。数组索引
+</code></pre><p>​            </p>
+<pre><code>                        2. 给结束按钮绑定单击事件
+                            1.1 停止定时器
+                            1.2 给大相框设置src属性
 
-            2. 方法：
-                random():返回 0 ~ 1 之间的随机数。 含0不含1
-                ceil(x)：对数进行上舍入。
-                floor(x)：对数进行下舍入。
-                round(x)：把数四舍五入为最接近的整数。
-            3. 属性：
-                PI
-        6. Number
-        7. String
-        8. RegExp：正则表达式对象
-            1. 正则表达式：定义字符串的组成规则。
-                1. 单个字符:[]
-                    如： [a] [ab] [a-zA-Z0-9_]
-                    * 特殊符号代表特殊含义的单个字符:
-                        \d:单个数字字符 [0-9]
-                        \w:单个单词字符[a-zA-Z0-9_]
-                2. 量词符号：
-                    ?：表示出现0次或1次
-                    *：表示出现0次或多次
-                    +：出现1次或多次
-                    {m,n}:表示 m&lt;= 数量 &lt;= n
-                        * m如果缺省： {,n}:最多n次
-                        * n如果缺省：{m,} 最少m次
-                3. 开始结束符号
-                    * ^:开始
-                    * $:结束
-            2. 正则对象：
-                1. 创建
-                    1. var reg = new RegExp(&quot;正则表达式&quot;);
-                    2. var reg = /正则表达式/;
-                2. 方法    
-                    1. test(参数):验证指定的字符串是否符合正则定义的规范    
-        9. Global
-            1. 特点：全局对象，这个Global中封装的方法不需要对象就可以直接调用。  方法名();
-            2. 方法：
-                encodeURI():url编码
-                decodeURI():url解码
+                 */
+                var imgs = [&quot;../img/man00.jpg&quot;,
+                            &quot;../img/man01.jpg&quot;,
+                            &quot;../img/man02.jpg&quot;,
+                            &quot;../img/man03.jpg&quot;,
+                            &quot;../img/man04.jpg&quot;,
+                            &quot;../img/man05.jpg&quot;,
+                            &quot;../img/man06.jpg&quot;,
+                            ];
+                var startId;//开始定时器的id
+                var index;//随机角标
+                $(function () {
+                    //处理按钮是否可以使用的效果
+                    $(&quot;#startID&quot;).prop(&quot;disabled&quot;,false);
+                    $(&quot;#stopID&quot;).prop(&quot;disabled&quot;,true);
+</code></pre><p>​<br>                       //1. 给开始按钮绑定单击事件<br>                        $(“#startID”).click(function () {<br>                            // 1.1 定义循环定时器 20毫秒执行一次<br>                            startId = setInterval(function () {<br>                                //处理按钮是否可以使用的效果<br>                                $(“#startID”).prop(“disabled”,true);<br>                                $(“#stopID”).prop(“disabled”,false);</p>
+<p>​<br>                                //1.2生成随机角标 0-6<br>                                index = Math.floor(Math.random() <em> 7);//0.000–0.999 –&gt; </em> 7 –&gt; 0.0—–6.9999<br>                                //1.3设置小相框的src属性<br>                                $(“#img1ID”).prop(“src”,imgs[index]);</p>
+<pre><code>                        },20);
+                    });
+</code></pre><p>​<br>                        //2. 给结束按钮绑定单击事件<br>                        $(“#stopID”).click(function () {<br>                            //处理按钮是否可以使用的效果<br>                            $(“#startID”).prop(“disabled”,false);<br>                            $(“#stopID”).prop(“disabled”,true);</p>
+<p>​<br>                           // 1.1 停止定时器<br>                            clearInterval(startId);<br>                           // 1.2 给大相框设置src属性<br>                            $(“#img2ID”).prop(“src”,imgs[index]).hide();<br>                            //显示1秒之后<br>                            $(“#img2ID”).show(1000);<br>                        });<br>                    });</p>
+<p>​<br>​<br>​<br>                </p>
+<pre><code>        &lt;/head&gt;
+        &lt;body&gt;
 
-                encodeURIComponent():url编码,编码的字符更多
-                decodeURIComponent():url解码
+        &lt;!-- 小像框 --&gt;
+        &lt;div style=&quot;border-style:dotted;width:160px;height:100px&quot;&gt;
+            &lt;img id=&quot;img1ID&quot; src=&quot;../img/man00.jpg&quot; style=&quot;width:160px;height:100px&quot;/&gt;
+        &lt;/div&gt;
 
-                parseInt():将字符串转为数字
-                    * 逐一判断每一个字符是否是数字，直到不是数字为止，将前边数字部分转为number
-                isNaN():判断一个值是否是NaN
-                    * NaN六亲不认，连自己都不认。NaN参与的==比较全部问false
+        &lt;!-- 大像框 --&gt;
+        &lt;div
+                style=&quot;border-style:double;width:800px;height:500px;position:absolute;left:500px;top:10px&quot;&gt;
+            &lt;img id=&quot;img2ID&quot; src=&quot;../img/man00.jpg&quot; width=&quot;800px&quot; height=&quot;500px&quot;/&gt;
+        &lt;/div&gt;
 
-                eval():讲 JavaScript 字符串，并把它作为脚本代码来执行。
-            3. URL编码
-               你好世界 =  %E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2
+        &lt;!-- 开始按钮 --&gt;
+        &lt;input
+                id=&quot;startID&quot;
+                type=&quot;button&quot;
+                value=&quot;点击开始&quot;
+                style=&quot;width:150px;height:150px;font-size:22px&quot;&gt;
 
-* BOM
-
-* DOM
-</code></pre><p>​    </p>
-
+        &lt;!-- 停止按钮 --&gt;
+        &lt;input
+                id=&quot;stopID&quot;
+                type=&quot;button&quot;
+                value=&quot;点击停止&quot;
+                style=&quot;width:150px;height:150px;font-size:22px&quot;&gt;
+</code></pre><p>​<br>            <br>            </p>
+<pre><code>5. 插件：增强JQuery的功能
+    1. 实现方式：
+        1. $.fn.extend(object) 
+            * 增强通过Jquery获取的对象的功能  $(&quot;#id&quot;)
+        2. $.extend(object)
+            * 增强JQeury对象自身的功能  $/jQuery
+</code></pre>
             </div>
             <hr>
 
@@ -724,7 +674,7 @@ JavaScript：* 概念：    一门客户端脚本语言
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://Wang-Ben.github.io" class="b-link-green">Hexo</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/01/05/javascript-ji-chu-bi-ji/" class="b-link-green">JavaScript基础</a>
+                    <a href="/2019/01/06/jquery-gao-ji-bi-ji/" class="b-link-green">JQuery入门</a>
                 </p>
             </div>
         </div>
@@ -748,7 +698,7 @@ JavaScript：* 概念：    一门客户端脚本语言
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2019/01/06/jquery-gao-ji-bi-ji/">
+                <a href="/2019/01/06/jquery-ji-chu-bi-ji/">
                     <div class="card-image">
                         
                         
@@ -758,15 +708,14 @@ JavaScript：* 概念：    一门客户端脚本语言
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">目录：1. JQuery 高级
-    1. 动画
-    2. 遍历
-    3. 事件绑定
-    4. 案例
-    5. 插件
-JQuery 高级1. 动画
-    1. 三种方式显示和隐藏元素
-        1. 默认显示和隐藏</div>
+                    <div class="summary">目录1. JQuery 基础：
+    1. 概念
+    2. 快速入门
+    3. JQuery对象和JS对象区别与转换
+    4. 选择器
+    5. DOM操作
+    6. 案例
+JQuery 基础：1. 概念： 一个Jav</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-06
@@ -799,23 +748,20 @@ JQuery 高级1. 动画
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2019/01/05/javascript-gao-ji-bi-ji/">
+                <a href="/2019/01/05/javascript-ji-chu-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="JavaScript高级">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="JavaScript基础">
                         
-                        <span class="card-title">JavaScript高级</span>
+                        <span class="card-title">JavaScript基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">目录1. JavaScript：
-    1. ECMAScript：
-    2. BOM：
-    3. DOM：
-        1. 事件
-DOM简单学习：为了满足案例要求* 功能：控制html文档的内容
-* 获取页面标签(元素)对</div>
+                    <div class="summary">目录1. JavaScript基础
+JavaScript：* 概念：    一门客户端脚本语言
+    * 运行在客户端浏览器中的。每一个浏览器都有JavaScript的解析引擎
+    * 脚本语言：不需要编译，直接就可以被浏览器解析执行</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-05
