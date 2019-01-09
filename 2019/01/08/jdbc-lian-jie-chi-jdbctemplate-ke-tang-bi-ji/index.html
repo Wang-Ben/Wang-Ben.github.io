@@ -5,15 +5,13 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="JQuery入门, Hexo">
-    <meta name="description" content="目录1. JQuery 基础：
-    1. 概念
-    2. 快速入门
-    3. JQuery对象和JS对象区别与转换
-    4. 选择器
-    5. DOM操作
-    6. 案例
-JQuery 基础：1. 概念： 一个Jav">
+    <meta name="keywords" content="JDBC加强, Hexo">
+    <meta name="description" content="目录1. 数据库连接池
+
+2. Spring JDBC : JDBC Template
+
+数据库连接池1. 概念：其实就是一个容器(集合)，存放数据库连接的容器。
+        当系统初始化好后，容器被创建，容器中会申请一些连接对象，当用">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +19,7 @@ JQuery 基础：1. 概念： 一个Jav">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>JQuery入门 | Hexo</title>
+    <title>JDBC加强 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -280,13 +278,13 @@ JQuery 基础：1. 概念： 一个Jav">
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        JQuery入门
+                        JDBC加强
                     </div>
                 </div>
             </div>
@@ -306,8 +304,12 @@ JQuery 基础：1. 概念： 一个Jav">
             
             <div class="article-tag">
                 
-                <a href="/tags/JQuery/" target="_blank">
-                    <span class="chip bg-color">JQuery</span>
+                <a href="/tags/数据库连接池/" target="_blank">
+                    <span class="chip bg-color">数据库连接池</span>
+                </a>
+                
+                <a href="/tags/JDBC-Template/" target="_blank">
+                    <span class="chip bg-color">JDBC Template</span>
                 </a>
                 
             </div>
@@ -318,15 +320,15 @@ JQuery 基础：1. 概念： 一个Jav">
                 <!--<span class="post-cate" style="margin-right: 0px">-->
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/前端基础/" class="post-category" target="_blank">
-                        前端基础
+                    <a href="/categories/web基础/" class="post-category" target="_blank">
+                        web基础
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-01-06
+                    <i class="fa fa-clock-o fa-fw"></i>2019-01-08
                 </span>
 				
 				
@@ -338,170 +340,307 @@ JQuery 基础：1. 概念： 一个Jav">
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><pre><code>1. JQuery 基础：
-    1. 概念
-    2. 快速入门
-    3. JQuery对象和JS对象区别与转换
-    4. 选择器
-    5. DOM操作
-    6. 案例
-</code></pre><h1 id="JQuery-基础："><a href="#JQuery-基础：" class="headerlink" title="JQuery 基础："></a>JQuery 基础：</h1><pre><code>1. 概念： 一个JavaScript框架。简化JS开发
-    * jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。jQuery设计的宗旨    是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优    化HTML文档操作、事件处理、动画设计和Ajax交互。
+                <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><pre><code>1. 数据库连接池
 
-    * JavaScript框架：本质上就是一些js文件，封装了js的原生代码而已
-2. 快速入门
+2. Spring JDBC : JDBC Template
+</code></pre><p><img src="\images\数据库连接池.bmp" alt=""></p>
+<h2 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h2><pre><code>1. 概念：其实就是一个容器(集合)，存放数据库连接的容器。
+        当系统初始化好后，容器被创建，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问完之后，会将连接对象归还给容器。
+
+2. 好处：
+    1. 节约资源
+    2. 用户访问高效
+
+3. 实现：
+    1. 标准接口：DataSource   javax.sql包下的
+        1. 方法：
+            * 获取连接：getConnection()
+            * 归还连接：Connection.close()。如果连接对象Connection是从连接池中获取的，那么调用Connection.close()方法，则不会再关闭连接了。而是归还连接
+
+    2. 一般我们不去实现它，有数据库厂商来实现
+        1. C3P0：数据库连接池技术
+        2. Druid：数据库连接池实现技术，由阿里巴巴提供的
+
+
+4. C3P0：数据库连接池技术
+    * 步骤：
+        1. 导入jar包 (两个) c3p0-0.9.5.2.jar mchange-commons-java-0.2.12.jar ，
+            * 不要忘记导入数据库驱动jar包
+        2. 定义配置文件：
+            * 名称： c3p0.properties 或者 c3p0-config.xml
+            * 路径：直接将文件放在src目录下即可。
+
+        3. 创建核心对象 数据库连接池对象 ComboPooledDataSource
+        4. 获取连接： getConnection
+    * 代码：
+         //1.创建数据库连接池对象
+        DataSource ds  = new ComboPooledDataSource();
+        //2. 获取连接对象
+        Connection conn = ds.getConnection();
+5. Druid：数据库连接池实现技术，由阿里巴巴提供的
     1. 步骤：
-        1. 下载JQuery
-            * 目前jQuery有三个大版本：
-                1.x：兼容ie678,使用最为广泛的，官方只做BUG维护，
-                     功能不再新增。因此一般项目来说，使用1.x版本就可以了，
-                     最终版本：1.12.4 (2016年5月20日)
-                2.x：不兼容ie678，很少有人使用，官方只做BUG维护，
-                     功能不再新增。如果不考虑兼容低版本的浏览器可以使用2.x，
-                     最终版本：2.2.4 (2016年5月20日)
-                3.x：不兼容ie678，只支持最新的浏览器。除非特殊要求，
-                     一般不会使用3.x版本的，很多老的jQuery插件不支持这个版本。
-                     目前该版本是官方主要更新维护的版本。最新版本：3.2.1（2017年3月20日）
-            * jquery-xxx.js 与 jquery-xxx.min.js区别：
-                1. jquery-xxx.js：开发版本。给程序员看的，有良好的缩进和注释。体积大一些
-                2. jquery-xxx.min.js：生产版本。程序中使用，没有缩进。体积小一些。程序加载更快
-
-        2. 导入JQuery的js文件：导入min.js文件
-        3. 使用
-            var div1 = $(&quot;#div1&quot;);
-               alert(div1.html());
-
-
-3. JQuery对象和JS对象区别与转换
-    1. JQuery对象在操作时，更加方便。
-    2. JQuery对象和js对象方法不通用的.
-    3. 两者相互转换
-        * jq -- &gt; js : jq对象[索引] 或者 jq对象.get(索引)
-        * js -- &gt; jq : $(js对象)
+        1. 导入jar包 druid-1.0.9.jar
+        2. 定义配置文件：
+            * 是properties形式的
+            * 可以叫任意名称，可以放在任意目录下
+        3. 加载配置文件。Properties
+        4. 获取数据库连接池对象：通过工厂来来获取  DruidDataSourceFactory
+        5. 获取连接：getConnection
+    * 代码：
+         //3.加载配置文件
+        Properties pro = new Properties();
+        InputStream is = DruidDemo.class.getClassLoader().getResourceAsStream(&quot;druid.properties&quot;);
+        pro.load(is);
+        //4.获取连接池对象
+        DataSource ds = DruidDataSourceFactory.createDataSource(pro);
+        //5.获取连接
+        Connection conn = ds.getConnection();
+    2. 定义工具类
+        1. 定义一个类 JDBCUtils
+        2. 提供静态代码块加载配置文件，初始化连接池对象
+        3. 提供方法
+            1. 获取连接方法：通过数据库连接池获取连接
+            2. 释放资源
+            3. 获取连接池的方法
 
 
-4. 选择器：筛选具有相似特征的元素(标签)
+    * 代码：
+        public class JDBCUtils {
 
-    1. 基本操作学习：
-        1. 事件绑定
-            //1.获取b1按钮
-            $(&quot;#b1&quot;).click(function(){
-                alert(&quot;abc&quot;);
-            });
-        2. 入口函数
-             $(function () {
+            //1.定义成员变量 DataSource
+            private static DataSource ds ;
 
-                });
-             window.onload  和 $(function) 区别
-                 * window.onload 只能定义一次,如果定义多次，后边的会将前边的覆盖掉
-                 * $(function)可以定义多次的。
-        3. 样式控制：css方法
-             // $(&quot;#div1&quot;).css(&quot;background-color&quot;,&quot;red&quot;);
-              $(&quot;#div1&quot;).css(&quot;backgroundColor&quot;,&quot;pink&quot;);
+            static{
+                try {
+                    //1.加载配置文件
+                    Properties pro = new Properties();
+                    pro.load(JDBCUtils.class.getClassLoader().getResourceAsStream(&quot;druid.properties&quot;));
+                    //2.获取DataSource
+                    ds = DruidDataSourceFactory.createDataSource(pro);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
 
+            /**
+             * 获取连接
+             */
+            public static Connection getConnection() throws SQLException {
+                return ds.getConnection();
+            }
 
-    2. 分类
-        1. 基本选择器
-            1. 标签选择器（元素选择器）
-                * 语法： $(&quot;html标签名&quot;) 获得所有匹配标签名称的元素
-            2. id选择器 
-                * 语法： $(&quot;#id的属性值&quot;) 获得与指定id属性值匹配的元素
-            3. 类选择器
-                * 语法： $(&quot;.class的属性值&quot;) 获得与指定的class属性值匹配的元素
-            4. 并集选择器：
-                * 语法： $(&quot;选择器1,选择器2....&quot;) 获取多个选择器选中的所有元素
-        2. 层级选择器
-            1. 后代选择器
-                * 语法： $(&quot;A B &quot;) 选择A元素内部的所有B元素        
-            2. 子选择器
-                * 语法： $(&quot;A &gt; B&quot;) 选择A元素内部的所有B子元素
-        3. 属性选择器
-            1. 属性名称选择器 
-                * 语法： $(&quot;A[属性名]&quot;) 包含指定属性的选择器
-            2. 属性选择器
-                * 语法： $(&quot;A[属性名=&#39;值&#39;]&quot;) 包含指定属性等于指定值的选择器
-            3. 复合属性选择器
-                * 语法： $(&quot;A[属性名=&#39;值&#39;][]...&quot;) 包含多个属性条件的选择器
-        4. 过滤选择器
-            1. 首元素选择器 
-                * 语法： :first 获得选择的元素中的第一个元素
-            2. 尾元素选择器 
-                * 语法： :last 获得选择的元素中的最后一个元素
-            3. 非元素选择器
-                * 语法： :not(selector) 不包括指定内容的元素
-            4. 偶数选择器
-                * 语法： :even 偶数，从 0 开始计数
-            5. 奇数选择器
-                * 语法： :odd 奇数，从 0 开始计数
-            6. 等于索引选择器
-                * 语法： :eq(index) 指定索引元素
-            7. 大于索引选择器 
-                * 语法： :gt(index) 大于指定索引元素
-            8. 小于索引选择器 
-                * 语法： :lt(index) 小于指定索引元素
-            9. 标题选择器
-                * 语法： :header 获得标题（h1~h6）元素，固定写法
-        5. 表单过滤选择器
-            1. 可用元素选择器 
-                * 语法： :enabled 获得可用元素
-            2. 不可用元素选择器 
-                * 语法： :disabled 获得不可用元素
-            3. 选中选择器 
-                * 语法： :checked 获得单选/复选框选中的元素
-            4. 选中选择器 
-                * 语法： :selected 获得下拉框选中的元素
+            /**
+             * 释放资源
+             */
+            public static void close(Statement stmt,Connection conn){
+               /* if(stmt != null){
+                    try {
+                        stmt.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
 
-5. DOM操作
-    1. 内容操作
-        1. html(): 获取/设置元素的标签体内容   &lt;a&gt;&lt;font&gt;内容&lt;/font&gt;&lt;/a&gt;  --&gt; &lt;font&gt;内容&lt;/font&gt;
-        2. text(): 获取/设置元素的标签体纯文本内容   &lt;a&gt;&lt;font&gt;内容&lt;/font&gt;&lt;/a&gt; --&gt; 内容
-        3. val()： 获取/设置元素的value属性值
-    2. 属性操作
-        1. 通用属性操作
-            1. attr(): 获取/设置元素的属性
-            2. removeAttr():删除属性
-            3. prop():获取/设置元素的属性
-            4. removeProp():删除属性
+                if(conn != null){
+                    try {
+                        conn.close();//归还连接
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }*/
 
-            * attr和prop区别？
-                1. 如果操作的是元素的固有属性，则建议使用prop
-                2. 如果操作的是元素自定义的属性，则建议使用attr
-        2. 对class属性操作
-            1. addClass():添加class属性值
-            2. removeClass():删除class属性值
-            3. toggleClass():切换class属性
-                * toggleClass(&quot;one&quot;): 
-                    * 判断如果元素对象上存在class=&quot;one&quot;，则将属性值one删除掉。  如果元素对象上不存在class=&quot;one&quot;，则添加
-            4. css():
-    3. CRUD操作:
-        1. append():父元素将子元素追加到末尾
-            * 对象1.append(对象2): 将对象2添加到对象1元素内部，并且在末尾
-        2. prepend():父元素将子元素追加到开头
-            * 对象1.prepend(对象2):将对象2添加到对象1元素内部，并且在开头
-        3. appendTo():
-            * 对象1.appendTo(对象2):将对象1添加到对象2内部，并且在末尾
-        4. prependTo()：
-            * 对象1.prependTo(对象2):将对象1添加到对象2内部，并且在开头
+               close(null,stmt,conn);
+            }
+</code></pre><p>​<br>                public static void close(ResultSet rs , Statement stmt, Connection conn){</p>
+<p>​<br>                    if(rs != null){<br>                        try {<br>                            rs.close();<br>                        } catch (SQLException e) {<br>                            e.printStackTrace();<br>                        }<br>                    }</p>
+<p>​<br>                    if(stmt != null){<br>                        try {<br>                            stmt.close();<br>                        } catch (SQLException e) {<br>                            e.printStackTrace();<br>                        }<br>                    }</p>
+<pre><code>                if(conn != null){
+                    try {
+                        conn.close();//归还连接
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
 
+            /**
+             * 获取连接池方法
+             */
 
-        5. after():添加元素到元素后边
-            * 对象1.after(对象2)： 将对象2添加到对象1后边。对象1和对象2是兄弟关系
-        6. before():添加元素到元素前边
-            * 对象1.before(对象2)： 将对象2添加到对象1前边。对象1和对象2是兄弟关系
-        7. insertAfter()
-            * 对象1.insertAfter(对象2)：将对象2添加到对象1后边。对象1和对象2是兄弟关系
-        8. insertBefore()
-            * 对象1.insertBefore(对象2)： 将对象2添加到对象1前边。对象1和对象2是兄弟关系
+            public static DataSource getDataSource(){
+                return  ds;
+            }
 
-        9. remove():移除元素
-            * 对象.remove():将对象删除掉
-        10. empty():清空元素的所有后代元素。
-            * 对象.empty():将对象的后代元素全部清空，但是保留当前对象以及其属性节点
+        }
+</code></pre><h2 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h2><pre><code>* Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发
+* 步骤：
+    1. 导入jar包
+    2. 创建JdbcTemplate对象。依赖于数据源DataSource
+        * JdbcTemplate template = new JdbcTemplate(ds);
 
+    3. 调用JdbcTemplate的方法来完成CRUD的操作
+        * update():执行DML语句。增、删、改语句
+        * queryForMap():查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合
+            * 注意：这个方法查询的结果集长度只能是1
+        * queryForList():查询结果将结果集封装为list集合
+            * 注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中
+        * query():查询结果，将结果封装为JavaBean对象
+            * query的参数：RowMapper
+                * 一般我们使用BeanPropertyRowMapper实现类。可以完成数据到JavaBean的自动封装
+                * new BeanPropertyRowMapper&lt;类型&gt;(类型.class)
+        * queryForObject：查询结果，将结果封装为对象
+            * 一般用于聚合函数的查询
 
-6. 案例
-</code></pre><p>​            </p>
+    4. 练习：
+        * 需求：
+            1. 修改1号数据的 salary 为 10000
+            2. 添加一条记录
+            3. 删除刚才添加的记录
+            4. 查询id为1的记录，将其封装为Map集合
+            5. 查询所有记录，将其封装为List
+            6. 查询所有记录，将其封装为Emp对象的List集合
+            7. 查询总记录数
 
+        * 代码：
+
+            import cn.itcast.domain.Emp;
+            import cn.itcast.utils.JDBCUtils;
+            import org.junit.Test;
+            import org.springframework.jdbc.core.BeanPropertyRowMapper;
+            import org.springframework.jdbc.core.JdbcTemplate;
+            import org.springframework.jdbc.core.RowMapper;
+
+            import java.sql.Date;
+            import java.sql.ResultSet;
+            import java.sql.SQLException;
+            import java.util.List;
+            import java.util.Map;
+
+            public class JdbcTemplateDemo2 {
+
+                //Junit单元测试，可以让方法独立执行
+</code></pre><p>​<br>                    //1. 获取JDBCTemplate对象<br>                    private JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());<br>                    /**</p>
+<pre><code>                 * 1. 修改1号数据的 salary 为 10000
+                 */
+                @Test
+                public void test1(){
+
+                    //2. 定义sql
+                    String sql = &quot;update emp set salary = 10000 where id = 1001&quot;;
+                    //3. 执行sql
+                    int count = template.update(sql);
+                    System.out.println(count);
+                }
+
+                /**
+                 * 2. 添加一条记录
+                 */
+                @Test
+                public void test2(){
+                    String sql = &quot;insert into emp(id,ename,dept_id) values(?,?,?)&quot;;
+                    int count = template.update(sql, 1015, &quot;郭靖&quot;, 10);
+                    System.out.println(count);
+
+                }
+
+                /**
+                 * 3.删除刚才添加的记录
+                 */
+                @Test
+                public void test3(){
+                    String sql = &quot;delete from emp where id = ?&quot;;
+                    int count = template.update(sql, 1015);
+                    System.out.println(count);
+                }
+
+                /**
+                 * 4.查询id为1001的记录，将其封装为Map集合
+                 * 注意：这个方法查询的结果集长度只能是1
+                 */
+                @Test
+                public void test4(){
+                    String sql = &quot;select * from emp where id = ? or id = ?&quot;;
+                    Map&lt;String, Object&gt; map = template.queryForMap(sql, 1001,1002);
+                    System.out.println(map);
+                    //{id=1001, ename=孙悟空, job_id=4, mgr=1004, joindate=2000-12-17, salary=10000.00, bonus=null, dept_id=20}
+
+                }
+
+                /**
+                 * 5. 查询所有记录，将其封装为List
+                 */
+                @Test
+                public void test5(){
+                    String sql = &quot;select * from emp&quot;;
+                    List&lt;Map&lt;String, Object&gt;&gt; list = template.queryForList(sql);
+
+                    for (Map&lt;String, Object&gt; stringObjectMap : list) {
+                        System.out.println(stringObjectMap);
+                    }
+                }
+
+                /**
+                 * 6. 查询所有记录，将其封装为Emp对象的List集合
+                 */
+
+                @Test
+                public void test6(){
+                    String sql = &quot;select * from emp&quot;;
+                    List&lt;Emp&gt; list = template.query(sql, new RowMapper&lt;Emp&gt;() {
+
+                        @Override
+                        public Emp mapRow(ResultSet rs, int i) throws SQLException {
+                            Emp emp = new Emp();
+                            int id = rs.getInt(&quot;id&quot;);
+                            String ename = rs.getString(&quot;ename&quot;);
+                            int job_id = rs.getInt(&quot;job_id&quot;);
+                            int mgr = rs.getInt(&quot;mgr&quot;);
+                            Date joindate = rs.getDate(&quot;joindate&quot;);
+                            double salary = rs.getDouble(&quot;salary&quot;);
+                            double bonus = rs.getDouble(&quot;bonus&quot;);
+                            int dept_id = rs.getInt(&quot;dept_id&quot;);
+
+                            emp.setId(id);
+                            emp.setEname(ename);
+                            emp.setJob_id(job_id);
+                            emp.setMgr(mgr);
+                            emp.setJoindate(joindate);
+                            emp.setSalary(salary);
+                            emp.setBonus(bonus);
+                            emp.setDept_id(dept_id);
+
+                            return emp;
+                        }
+                    });
+</code></pre><p>​<br>                        for (Emp emp : list) {<br>                            System.out.println(emp);<br>                        }<br>                    }</p>
+<pre><code>                /**
+                 * 6. 查询所有记录，将其封装为Emp对象的List集合
+                 */
+
+                @Test
+                public void test6_2(){
+                    String sql = &quot;select * from emp&quot;;
+                    List&lt;Emp&gt; list = template.query(sql, new BeanPropertyRowMapper&lt;Emp&gt;(Emp.class));
+                    for (Emp emp : list) {
+                        System.out.println(emp);
+                    }
+                }
+
+                /**
+                 * 7. 查询总记录数
+                 */
+
+                @Test
+                public void test7(){
+                    String sql = &quot;select count(id) from emp&quot;;
+                    Long total = template.queryForObject(sql, Long.class);
+                    System.out.println(total);
+                }
+
+            }
+</code></pre>
             </div>
             <hr>
 
@@ -639,7 +778,7 @@ JQuery 基础：1. 概念： 一个Jav">
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://Wang-Ben.github.io" class="b-link-green">Hexo</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/01/06/jquery-ji-chu-bi-ji/" class="b-link-green">JQuery入门</a>
+                    <a href="/2019/01/08/jdbc-lian-jie-chi-jdbctemplate-ke-tang-bi-ji/" class="b-link-green">JDBC加强</a>
                 </p>
             </div>
         </div>
@@ -661,7 +800,60 @@ JQuery 基础：1. 概念： 一个Jav">
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
+            <div class="card">
+                <a href="/2019/01/08/jdbc-lian-jie-chi-jdbctemplate-ke-tang-bi-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="JDBC加强">
+                        
+                        <span class="card-title">JDBC加强</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">目录1. 数据库连接池
+
+2. Spring JDBC : JDBC Template
+
+数据库连接池1. 概念：其实就是一个容器(集合)，存放数据库连接的容器。
+        当系统初始化好后，容器被创建，容器中会申请一些连接对象，当用</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web基础/" class="post-category" target="_blank">
+                                    web基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/数据库连接池/" target="_blank">
+                        <span class="chip bg-color">数据库连接池</span>
+                    </a>
+                    
+                    <a href="/tags/JDBC-Template/" target="_blank">
+                        <span class="chip bg-color">JDBC Template</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
                 <a href="/2019/01/07/jdbc-ke-tang-bi-ji/">
                     <div class="card-image">
@@ -680,9 +872,9 @@ JQuery 基础：1. 概念： 一个Jav">
 JDBC：1. 概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库
     * JDBC本质：其实是</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -700,57 +892,6 @@ JDBC：1. 概念：Java DataBase Connectivity  Java 数据库连接， Java语�
                     
                     <a href="/tags/JDBC/" target="_blank">
                         <span class="chip bg-color">JDBC</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
-            <div class="card">
-                <a href="/2019/01/06/jquery-gao-ji-bi-ji/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="JQuery高级">
-                        
-                        <span class="card-title">JQuery高级</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">目录：1. JQuery 高级
-    1. 动画
-    2. 遍历
-    3. 事件绑定
-    4. 案例
-    5. 插件
-JQuery 高级1. 动画
-    1. 三种方式显示和隐藏元素
-        1. 默认显示和隐藏</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-06
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/前端基础/" class="post-category" target="_blank">
-                                    前端基础
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/JQuery/" target="_blank">
-                        <span class="chip bg-color">JQuery</span>
                     </a>
                     
                 </div>
