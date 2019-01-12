@@ -1,0 +1,960 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Bootstrap入门, Hexo">
+    <meta name="description" content="Bootstrap：1. 概念： 一个前端开发的框架，Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。
+  ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Bootstrap入门 | Hexo</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">Hexo</span>
+                    </a>
+                </div>
+                
+
+<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Hexo</div>
+        <div class="logo-desc">
+            
+            遗忘世界
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:chenjiayin1990@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 184125908" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Bootstrap入门
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/Bootstrap/" target="_blank">
+                    <span class="chip bg-color">Bootstrap</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                <!--<span class="post-cate" style="margin-right: 0px">-->
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/前端框架/" class="post-category" target="_blank">
+                        前端框架
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2019-01-04
+                </span>
+				
+				
+                    <span id="busuanzi_container_page_pv" class="post-read">
+                    <i class="fa fa-eye fa-fw"></i>阅读 <span id="busuanzi_value_page_pv"></span>
+				
+            </span></div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="Bootstrap："><a href="#Bootstrap：" class="headerlink" title="Bootstrap："></a>Bootstrap：</h2><pre><code>1. 概念： 一个前端开发的框架，Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。
+    * 框架:一个半成品软件，开发人员可以在框架基础上，在进行开发，简化编码。
+    * 好处：
+        1. 定义了很多的css样式和js插件。我们开发人员直接可以使用这些样式和插件得到丰富的页面效果。
+        2. 响应式布局。
+            * 同一套页面可以兼容不同分辨率的设备。
+
+
+2. 快速入门
+    1. 下载Bootstrap
+    2. 在项目中将这三个文件夹复制
+    3. 创建html页面，引入必要的资源文件
+
+
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;zh-CN&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+        &lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;
+        &lt;title&gt;Bootstrap HelloWorld&lt;/title&gt;
+
+        &lt;!-- Bootstrap --&gt;
+        &lt;link href=&quot;css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+</code></pre><p>​<br>            <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --><br>            <script src="js/jquery-3.2.1.min.js"></script><br>            <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 --><br>            <script src="js/bootstrap.min.js"></script><br>        <br>        <body><br>        <h1>你好，世界！</h1></body></p>
+<pre><code>    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre><h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h2><pre><code>* 同一套页面可以兼容不同分辨率的设备。
+* 实现：依赖于栅格系统：将一行平均分成12个格子，可以指定元素占几个格子
+* 步骤：
+    1. 定义容器。相当于之前的table、
+        * 容器分类：
+            1. container：两边留白
+            2. container-fluid：每一种设备都是100%宽度
+    2. 定义行。相当于之前的tr   样式：row
+    3. 定义元素。指定该元素在不同的设备上，所占的格子数目。样式：col-设备代号-格子数目
+        * 设备代号：
+            1. xs：超小屏幕 手机 (&lt;768px)：col-xs-12
+            2. sm：小屏幕 平板 (≥768px)
+            3. md：中等屏幕 桌面显示器 (≥992px)
+            4. lg：大屏幕 大桌面显示器 (≥1200px)
+
+    * 注意：
+        1. 一行中如果格子数目超过12，则超出部分自动换行。
+        2. 栅格类属性可以向上兼容。栅格类适用于与屏幕宽度大于或等于分界点大小的设备。
+        3. 如果真实设备宽度小于了设置栅格类属性的设备代码的最小值，会一个元素沾满一整行。
+</code></pre><h2 id="CSS样式和JS插件"><a href="#CSS样式和JS插件" class="headerlink" title="CSS样式和JS插件"></a>CSS样式和JS插件</h2><pre><code>1. 全局CSS样式：
+    * 按钮：class=&quot;btn btn-default&quot;
+    * 图片：
+        *  class=&quot;img-responsive&quot;：图片在任意尺寸都占100%
+        *  图片形状
+            *  &lt;img src=&quot;...&quot; alt=&quot;...&quot; class=&quot;img-rounded&quot;&gt;：方形
+            *  &lt;img src=&quot;...&quot; alt=&quot;...&quot; class=&quot;img-circle&quot;&gt; ： 圆形
+            *  &lt;img src=&quot;...&quot; alt=&quot;...&quot; class=&quot;img-thumbnail&quot;&gt; ：相框
+    * 表格
+        * table
+        * table-bordered
+        * table-hover
+    * 表单
+        * 给表单项添加：class=&quot;form-control&quot; 
+2. 组件：
+    * 导航条
+    * 分页条
+3. 插件：
+    * 轮播图
+</code></pre><h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;
+    &lt;title&gt;Bootstrap HelloWorld&lt;/title&gt;
+
+    &lt;!-- Bootstrap --&gt;
+    &lt;link href=&quot;css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+</code></pre><p>​<br>        <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --><br>        <script src="js/jquery-3.2.1.min.js"></script><br>        <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 --><br>        <script src="js/bootstrap.min.js"></script><br>        <style><br>            .paddtop{<br>                padding-top: 10px;<br>            }<br>            .search-btn{<br>                float: left;<br>                border:1px solid #ffc900;<br>                width: 90px;<br>                height: 35px;<br>                background-color:#ffc900 ;<br>                text-align: center;<br>                line-height: 35px;<br>                margin-top: 15px;<br>            }</p>
+<pre><code>        .search-input{
+            float: left;
+            border:2px solid #ffc900;
+            width: 400px;
+            height: 35px;
+            padding-left: 5px;
+            margin-top: 15px;
+        }
+        .jx{
+            border-bottom: 2px solid #ffc900;
+            padding: 5px;
+        }
+        .company{
+            height: 40px;
+            background-color: #ffc900;
+            text-align: center;
+            line-height:40px ;
+            font-size: 8px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+   &lt;!-- 1.页眉部分--&gt;
+   &lt;header class=&quot;container-fluid&quot;&gt;
+       &lt;div class=&quot;row&quot;&gt;
+           &lt;img src=&quot;img/top_banner.jpg&quot; class=&quot;img-responsive&quot;&gt;
+       &lt;/div&gt;
+       &lt;div class=&quot;row paddtop&quot;&gt;
+           &lt;div class=&quot;col-md-3&quot;&gt;
+               &lt;img src=&quot;img/logo.jpg&quot; class=&quot;img-responsive&quot;&gt;
+           &lt;/div&gt;
+           &lt;div class=&quot;col-md-5&quot;&gt;
+               &lt;input class=&quot;search-input&quot; placeholder=&quot;请输入线路名称&quot;&gt;
+               &lt;a class=&quot;search-btn&quot; href=&quot;#&quot;&gt;搜索&lt;/a&gt;
+           &lt;/div&gt;
+           &lt;div class=&quot;col-md-4&quot;&gt;
+               &lt;img src=&quot;img/hotel_tel.png&quot; class=&quot;img-responsive&quot;&gt;
+           &lt;/div&gt;
+
+       &lt;/div&gt;
+       &lt;!--导航栏--&gt;
+       &lt;div class=&quot;row&quot;&gt;
+           &lt;nav class=&quot;navbar navbar-default&quot;&gt;
+               &lt;div class=&quot;container-fluid&quot;&gt;
+                   &lt;!-- Brand and toggle get grouped for better mobile display --&gt;
+                   &lt;div class=&quot;navbar-header&quot;&gt;
+                       &lt;!-- 定义汉堡按钮 --&gt;
+                       &lt;button type=&quot;button&quot; class=&quot;navbar-toggle collapsed&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#bs-example-navbar-collapse-1&quot; aria-expanded=&quot;false&quot;&gt;
+                           &lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;
+                           &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                           &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                           &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                       &lt;/button&gt;
+                       &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;首页&lt;/a&gt;
+                   &lt;/div&gt;
+
+                   &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
+                   &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;bs-example-navbar-collapse-1&quot;&gt;
+                       &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+                           &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Link &lt;span class=&quot;sr-only&quot;&gt;(current)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                           &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+                           &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+                           &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+                           &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+                           &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+
+                       &lt;/ul&gt;
+                   &lt;/div&gt;&lt;!-- /.navbar-collapse --&gt;
+               &lt;/div&gt;&lt;!-- /.container-fluid --&gt;
+           &lt;/nav&gt;
+
+       &lt;/div&gt;
+
+       &lt;!--轮播图--&gt;
+       &lt;div class=&quot;row&quot;&gt;
+           &lt;div id=&quot;carousel-example-generic&quot; class=&quot;carousel slide&quot; data-ride=&quot;carousel&quot;&gt;
+               &lt;!-- Indicators --&gt;
+               &lt;ol class=&quot;carousel-indicators&quot;&gt;
+                   &lt;li data-target=&quot;#carousel-example-generic&quot; data-slide-to=&quot;0&quot; class=&quot;active&quot;&gt;&lt;/li&gt;
+                   &lt;li data-target=&quot;#carousel-example-generic&quot; data-slide-to=&quot;1&quot;&gt;&lt;/li&gt;
+                   &lt;li data-target=&quot;#carousel-example-generic&quot; data-slide-to=&quot;2&quot;&gt;&lt;/li&gt;
+               &lt;/ol&gt;
+
+               &lt;!-- Wrapper for slides --&gt;
+               &lt;div class=&quot;carousel-inner&quot; role=&quot;listbox&quot;&gt;
+                   &lt;div class=&quot;item active&quot;&gt;
+                       &lt;img src=&quot;img/banner_1.jpg&quot; alt=&quot;...&quot;&gt;
+                   &lt;/div&gt;
+                   &lt;div class=&quot;item&quot;&gt;
+                       &lt;img src=&quot;img/banner_2.jpg&quot; alt=&quot;...&quot;&gt;
+                   &lt;/div&gt;
+                   &lt;div class=&quot;item&quot;&gt;
+                       &lt;img src=&quot;img/banner_3.jpg&quot; alt=&quot;...&quot;&gt;
+                   &lt;/div&gt;
+
+               &lt;/div&gt;
+
+               &lt;!-- Controls --&gt;
+               &lt;a class=&quot;left carousel-control&quot; href=&quot;#carousel-example-generic&quot; role=&quot;button&quot; data-slide=&quot;prev&quot;&gt;
+                   &lt;span class=&quot;glyphicon glyphicon-chevron-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                   &lt;span class=&quot;sr-only&quot;&gt;Previous&lt;/span&gt;
+               &lt;/a&gt;
+               &lt;a class=&quot;right carousel-control&quot; href=&quot;#carousel-example-generic&quot; role=&quot;button&quot; data-slide=&quot;next&quot;&gt;
+                   &lt;span class=&quot;glyphicon glyphicon-chevron-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                   &lt;span class=&quot;sr-only&quot;&gt;Next&lt;/span&gt;
+               &lt;/a&gt;
+           &lt;/div&gt;
+</code></pre><p>​<br>​<br>           </div></p>
+<pre><code>   &lt;/header&gt;
+   &lt;!-- 2.主体部分--&gt;
+   &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row jx&quot;&gt;
+            &lt;img src=&quot;img/icon_5.jpg&quot;&gt;
+            &lt;span&gt;黑马精选&lt;/span&gt;
+        &lt;/div&gt;
+
+       &lt;div class=&quot;row paddtop&quot;&gt;
+           &lt;div class=&quot;col-md-3&quot;&gt;
+                &lt;div class=&quot;thumbnail&quot;&gt;
+                    &lt;img src=&quot;img/jiangxuan_3.jpg&quot; alt=&quot;&quot;&gt;
+                    &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;
+                    &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                &lt;/div&gt;
+           &lt;/div&gt;
+           &lt;div class=&quot;col-md-3&quot;&gt;
+               &lt;div class=&quot;thumbnail&quot;&gt;
+                   &lt;img src=&quot;img/jiangxuan_3.jpg&quot; alt=&quot;&quot;&gt;
+                   &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;
+                   &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+               &lt;/div&gt;
+
+           &lt;/div&gt;
+           &lt;div class=&quot;col-md-3&quot;&gt;
+
+               &lt;div class=&quot;thumbnail&quot;&gt;
+                   &lt;img src=&quot;img/jiangxuan_3.jpg&quot; alt=&quot;&quot;&gt;
+                   &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;
+                   &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+               &lt;/div&gt;
+           &lt;/div&gt;
+           &lt;div class=&quot;col-md-3&quot;&gt;
+
+               &lt;div class=&quot;thumbnail&quot;&gt;
+                   &lt;img src=&quot;img/jiangxuan_3.jpg&quot; alt=&quot;&quot;&gt;
+                   &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;
+                   &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+               &lt;/div&gt;
+           &lt;/div&gt;
+</code></pre><p>​<br>           </div><br>           <div class="row jx"><br>               <img src="img/icon_6.jpg"><br>               <span>国内游</span><br>           </div><br>           <div class="row paddtop"><br>               <div class="col-md-4"><br>                   <img src="img/guonei_1.jpg"><br>               </div><br>               <div class="col-md-8"><br>                   <div class="row"><br>                       <div class="col-md-4"><br>                           <div class="thumbnail"><br>                               <img src="img/jiangxuan_3.jpg" alt=""><br>                               <p>上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)</p><br>                               <font color="red">&yen; 699</font><br>                           </div><br>                       </div><br>                       <div class="col-md-4"><br>                           <div class="thumbnail"><br>                               <img src="img/jiangxuan_3.jpg" alt=""><br>                               <p>上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)</p><br>                               <font color="red">&yen; 699</font><br>                           </div></p>
+<pre><code>                   &lt;/div&gt;
+                   &lt;div class=&quot;col-md-4&quot;&gt;
+
+                       &lt;div class=&quot;thumbnail&quot;&gt;
+                           &lt;img src=&quot;img/jiangxuan_3.jpg&quot; alt=&quot;&quot;&gt;
+                           &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;
+                           &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                       &lt;/div&gt;
+                   &lt;/div&gt;
+
+               &lt;/div&gt;
+               &lt;div class=&quot;row&quot;&gt;
+                   &lt;div class=&quot;col-md-4&quot;&gt;
+                       &lt;div class=&quot;thumbnail&quot;&gt;
+                           &lt;img src=&quot;img/jiangxuan_3.jpg&quot; alt=&quot;&quot;&gt;
+                           &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;
+                           &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                       &lt;/div&gt;
+                   &lt;/div&gt;
+                   &lt;div class=&quot;col-md-4&quot;&gt;
+                       &lt;div class=&quot;thumbnail&quot;&gt;
+                           &lt;img src=&quot;img/jiangxuan_3.jpg&quot; alt=&quot;&quot;&gt;
+                           &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;
+                           &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                       &lt;/div&gt;
+
+                   &lt;/div&gt;
+                   &lt;div class=&quot;col-md-4&quot;&gt;
+
+                       &lt;div class=&quot;thumbnail&quot;&gt;
+                           &lt;img src=&quot;img/jiangxuan_3.jpg&quot; alt=&quot;&quot;&gt;
+                           &lt;p&gt;上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)&lt;/p&gt;
+                           &lt;font color=&quot;red&quot;&gt;&amp;yen; 699&lt;/font&gt;
+                       &lt;/div&gt;
+                   &lt;/div&gt;
+</code></pre><p>​<br>                   </div></p>
+<pre><code>           &lt;/div&gt;
+
+       &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;!-- 3.页脚部分--&gt;
+   &lt;footer class=&quot;container-fluid&quot;&gt;
+       &lt;div class=&quot;row&quot;&gt;
+           &lt;img src=&quot;img/footer_service.png&quot; class=&quot;img-responsive&quot;&gt;
+       &lt;/div&gt;
+       &lt;div class=&quot;row company&quot;&gt;
+           *******有限公司 版权所有Copyright 2006-2018, All Rights Reserved*
+       &lt;/div&gt;
+
+   &lt;/footer&gt;
+</code></pre><p>​<br>    </body><br>    </html></p>
+</style></p>
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="http://Wang-Ben.github.io" class="b-link-green">Hexo</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2019/01/04/bootstrap-bi-ji/" class="b-link-green">Bootstrap入门</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/2019/01/04/html-css-ke-tang-bi-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="css">
+                        
+                        <span class="card-title">css</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">CSS：页面美化和布局控制1. 概念： Cascading Style Sheets 层叠样式表
+    * 层叠：多个样式可以作用在同一个html的元素上，同时生效
+
+2. 好处：
+    1. 功能强大
+    2. 将内容展示和样式控</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-04
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/前端入门/" class="post-category" target="_blank">
+                                    前端入门
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/css/" target="_blank">
+                        <span class="chip bg-color">css</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2019/01/04/servlet1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Servlet入门">
+                        
+                        <span class="card-title">Servlet入门</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">目录1. web相关概念回顾
+2. web服务器软件：Tomcat
+3. Servlet入门学习
+web相关概念回顾1. 软件架构
+    1. C/S：客户端/服务器端
+    2. B/S：浏览器/服务器端
+
+2. 资源分类
+    1</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web基础/" class="post-category" target="_blank">
+                                    web基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Servlet/" target="_blank">
+                        <span class="chip bg-color">Servlet</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+			
+                <br>
+                <span id="busuanzi_container_site_pv">
+                    本站总访问量 <span id="busuanzi_value_site_pv" style="color: #fff;"></span> 次,&nbsp;
+                </span>
+				<span id="busuanzi_container_site_uv">
+                    访客数 <span id="busuanzi_value_site_uv" style="color: #fff;"></span> 人.
+                </span>
+			
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:chenjiayin1990@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 184125908" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

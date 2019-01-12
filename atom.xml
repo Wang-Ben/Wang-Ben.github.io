@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Wang-Ben.github.io/"/>
-  <updated>2019-01-09T14:02:30.381Z</updated>
+  <updated>2019-01-12T15:28:11.076Z</updated>
   <id>http://Wang-Ben.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JDBC加强</title>
-    <link href="http://Wang-Ben.github.io/2019/01/08/jdbc-lian-jie-chi-jdbctemplate-ke-tang-bi-ji/"/>
-    <id>http://Wang-Ben.github.io/2019/01/08/jdbc-lian-jie-chi-jdbctemplate-ke-tang-bi-ji/</id>
-    <published>2019-01-07T16:12:43.000Z</published>
-    <updated>2019-01-09T14:02:30.381Z</updated>
+    <title></title>
+    <link href="http://Wang-Ben.github.io/2019/01/12/mysql-duo-biao-shi-wu-ke-tang-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/12/mysql-duo-biao-shi-wu-ke-tang-bi-ji/</id>
+    <published>2019-01-12T15:26:58.651Z</published>
+    <updated>2019-01-12T15:28:11.076Z</updated>
     
     <summary type="html">
     
@@ -29,29 +29,27 @@
       
         
         
-          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. 数据库连接池
-
-2. Spring JDBC : JDBC
+          &lt;pre&gt;&lt;code&gt;title: mysql多表与实务
+date: 2019-01-02 00:12:43
+tags: 
+    - mysql
+    - sql
+categories: 数据库
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot;
         
       
     
     </summary>
     
-      <category term="web基础" scheme="http://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="数据库连接池" scheme="http://Wang-Ben.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/"/>
-    
-      <category term="JDBC Template" scheme="http://Wang-Ben.github.io/tags/JDBC-Template/"/>
     
   </entry>
   
   <entry>
-    <title>JDBC入门</title>
-    <link href="http://Wang-Ben.github.io/2019/01/07/jdbc-ke-tang-bi-ji/"/>
-    <id>http://Wang-Ben.github.io/2019/01/07/jdbc-ke-tang-bi-ji/</id>
-    <published>2019-01-06T16:12:43.000Z</published>
-    <updated>2019-01-09T13:55:17.750Z</updated>
+    <title></title>
+    <link href="http://Wang-Ben.github.io/2019/01/12/mysql-yue-shu-ke-tang-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/12/mysql-yue-shu-ke-tang-bi-ji/</id>
+    <published>2019-01-12T15:22:56.949Z</published>
+    <updated>2019-01-12T15:23:59.399Z</updated>
     
     <summary type="html">
     
@@ -59,19 +57,103 @@
       
         
         
-          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. JDBC基本概念
-2. 快速入门
-3. 对JDBC中各个接口和类详解
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img
+          &lt;pre&gt;&lt;code&gt;title: mysql基础加强
+date: 2019-01-02 00:12:43
+tags: 
+    - mysql
+    - sql
+categories: 数据库
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot;
         
       
     
     </summary>
     
-      <category term="web基础" scheme="http://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://Wang-Ben.github.io/2019/01/12/ji-chu-jia-qiang-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/12/ji-chu-jia-qiang-bi-ji/</id>
+    <published>2019-01-12T15:13:16.755Z</published>
+    <updated>2019-01-12T15:31:17.064Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;p&gt;title: 基础增强&lt;br&gt;date: 2019-01-01 00:12:43&lt;br&gt;tags: &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- 反射
+- 单元测试
+- 注解
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;categories: java&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1
+        
+      
+    
+    </summary>
     
     
-      <category term="JDBC" scheme="http://Wang-Ben.github.io/tags/JDBC/"/>
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://Wang-Ben.github.io/2019/01/12/duo-tai/"/>
+    <id>http://Wang-Ben.github.io/2019/01/12/duo-tai/</id>
+    <published>2019-01-12T09:41:57.217Z</published>
+    <updated>2019-01-12T09:41:57.217Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;多态：同一操作作用于不同的对象，可以有不同的解释，产生不同的执行结果，这就是多态性&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  编译时多态：重载
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  ​    运行时多态（编译类型和运行类型不一致）：&lt;/p&gt;
+&lt;p&gt;  ​     
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Redis入门</title>
+    <link href="http://Wang-Ben.github.io/2019/01/10/redis-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/10/redis-bi-ji/</id>
+    <published>2019-01-09T16:12:43.000Z</published>
+    <updated>2019-01-12T15:47:43.835Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;今日内容&quot;&gt;&lt;a href=&quot;#今日内容&quot; class=&quot;headerlink&quot; title=&quot;今日内容&quot;&gt;&lt;/a&gt;今日内容&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. redis
+    1. 概念
+    2. 下载安装
+    3. 命令操作
+        1.
+        
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://Wang-Ben.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="Redis" scheme="http://Wang-Ben.github.io/tags/Redis/"/>
     
   </entry>
   
@@ -136,11 +218,11 @@
   </entry>
   
   <entry>
-    <title>JavaScript基础</title>
-    <link href="http://Wang-Ben.github.io/2019/01/05/javascript-ji-chu-bi-ji/"/>
-    <id>http://Wang-Ben.github.io/2019/01/05/javascript-ji-chu-bi-ji/</id>
+    <title>xml&amp;jsonp</title>
+    <link href="http://Wang-Ben.github.io/2019/01/05/xml-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/05/xml-bi-ji/</id>
     <published>2019-01-04T16:12:43.000Z</published>
-    <updated>2019-01-07T12:49:53.441Z</updated>
+    <updated>2019-01-12T15:48:46.280Z</updated>
     
     <summary type="html">
     
@@ -148,17 +230,22 @@
       
         
         
-          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. JavaScript基础
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;JavaScript：&quot;&gt;&lt;a
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. XML
+    1. 概念
+    2. 语法
+    3. 解析
+&lt;/code&gt;&lt;/pre&gt;&lt;h2
         
       
     
     </summary>
     
-      <category term="前端基础" scheme="http://Wang-Ben.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
+      <category term="xml&amp;jsonp" scheme="http://Wang-Ben.github.io/categories/xml-jsonp/"/>
     
     
-      <category term="JavaScript" scheme="http://Wang-Ben.github.io/tags/JavaScript/"/>
+      <category term="xml" scheme="http://Wang-Ben.github.io/tags/xml/"/>
+    
+      <category term="jsonp" scheme="http://Wang-Ben.github.io/tags/jsonp/"/>
     
   </entry>
   
@@ -180,6 +267,33 @@
     2. BOM：
     3. DOM：
    
+        
+      
+    
+    </summary>
+    
+      <category term="前端基础" scheme="http://Wang-Ben.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaScript" scheme="http://Wang-Ben.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript基础</title>
+    <link href="http://Wang-Ben.github.io/2019/01/05/javascript-ji-chu-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/05/javascript-ji-chu-bi-ji/</id>
+    <published>2019-01-04T16:12:43.000Z</published>
+    <updated>2019-01-07T12:49:53.441Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. JavaScript基础
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;JavaScript：&quot;&gt;&lt;a
         
       
     
@@ -222,6 +336,58 @@
   </entry>
   
   <entry>
+    <title>css</title>
+    <link href="http://Wang-Ben.github.io/2019/01/04/html-css-ke-tang-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/04/html-css-ke-tang-bi-ji/</id>
+    <published>2019-01-03T16:12:43.000Z</published>
+    <updated>2019-01-12T15:36:54.558Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;CSS：页面美化和布局控制&quot;&gt;&lt;a href=&quot;#CSS：页面美化和布局控制&quot; class=&quot;headerlink&quot; title=&quot;CSS：页面美化和布局控制&quot;&gt;&lt;/a&gt;CSS：页面美化和布局控制&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. 概念： Cascading
+        
+      
+    
+    </summary>
+    
+      <category term="前端入门" scheme="http://Wang-Ben.github.io/categories/%E5%89%8D%E7%AB%AF%E5%85%A5%E9%97%A8/"/>
+    
+    
+      <category term="css" scheme="http://Wang-Ben.github.io/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Bootstrap入门</title>
+    <link href="http://Wang-Ben.github.io/2019/01/04/bootstrap-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/04/bootstrap-bi-ji/</id>
+    <published>2019-01-03T16:12:43.000Z</published>
+    <updated>2019-01-12T15:38:30.791Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Bootstrap：&quot;&gt;&lt;a href=&quot;#Bootstrap：&quot; class=&quot;headerlink&quot; title=&quot;Bootstrap：&quot;&gt;&lt;/a&gt;Bootstrap：&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. 概念： 一个前端开发的框架，Bootstrap，来自
+        
+      
+    
+    </summary>
+    
+      <category term="前端框架" scheme="http://Wang-Ben.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+    
+    
+      <category term="Bootstrap" scheme="http://Wang-Ben.github.io/tags/Bootstrap/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Servlet入门</title>
     <link href="http://Wang-Ben.github.io/2019/01/04/servlet1/"/>
     <id>http://Wang-Ben.github.io/2019/01/04/servlet1/</id>
@@ -246,6 +412,124 @@
     
     
       <category term="Servlet" scheme="http://Wang-Ben.github.io/tags/Servlet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>heml入门</title>
+    <link href="http://Wang-Ben.github.io/2019/01/03/html-ke-tang-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/03/html-ke-tang-bi-ji/</id>
+    <published>2019-01-02T16:12:43.000Z</published>
+    <updated>2019-01-12T15:36:27.080Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. web概念概述
+2. HTML
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;web概念概述&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="前端基础" scheme="http://Wang-Ben.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="html" scheme="http://Wang-Ben.github.io/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JDBC入门</title>
+    <link href="http://Wang-Ben.github.io/2019/01/02/jdbc-ke-tang-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/02/jdbc-ke-tang-bi-ji/</id>
+    <published>2019-01-01T16:12:43.000Z</published>
+    <updated>2019-01-12T15:29:13.888Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. JDBC基本概念
+2. 快速入门
+3. 对JDBC中各个接口和类详解
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="web基础" scheme="http://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JDBC" scheme="http://Wang-Ben.github.io/tags/JDBC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JDBC加强</title>
+    <link href="http://Wang-Ben.github.io/2019/01/02/jdbc-lian-jie-chi-jdbctemplate-ke-tang-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/02/jdbc-lian-jie-chi-jdbctemplate-ke-tang-bi-ji/</id>
+    <published>2019-01-01T16:12:43.000Z</published>
+    <updated>2019-01-12T15:29:35.321Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. 数据库连接池
+
+2. Spring JDBC : JDBC
+        
+      
+    
+    </summary>
+    
+      <category term="web基础" scheme="http://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="数据库连接池" scheme="http://Wang-Ben.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/"/>
+    
+      <category term="JDBC Template" scheme="http://Wang-Ben.github.io/tags/JDBC-Template/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql基础入门</title>
+    <link href="http://Wang-Ben.github.io/2019/01/02/mysql-ji-chu-ke-tang-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/02/mysql-ji-chu-ke-tang-bi-ji/</id>
+    <published>2019-01-01T16:12:43.000Z</published>
+    <updated>2019-01-12T15:31:03.245Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;数据库的基本概念&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol
+        
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://Wang-Ben.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="mysql" scheme="http://Wang-Ben.github.io/tags/mysql/"/>
+    
+      <category term="sql" scheme="http://Wang-Ben.github.io/tags/sql/"/>
     
   </entry>
   

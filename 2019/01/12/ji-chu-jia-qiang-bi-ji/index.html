@@ -1,0 +1,851 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Hexo">
+    <meta name="description" content="
+title: 基础增强date: 2019-01-01 00:12:43tags: 
+- 反射
+- 单元测试
+- 注解
+categories: java
+
+目录1. Junit单元测试
+2. 反射
+3. 注解
+Junit单元测试：* 测试">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Hexo</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">Hexo</span>
+                    </a>
+                </div>
+                
+
+<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Hexo</div>
+        <div class="logo-desc">
+            
+            遗忘世界
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:chenjiayin1990@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 184125908" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="post-info">
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2019-01-12
+                </span>
+				
+				
+                    <span id="busuanzi_container_page_pv" class="post-read">
+                    <i class="fa fa-eye fa-fw"></i>阅读 <span id="busuanzi_value_page_pv"></span>
+				
+            </span></div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <hr>
+<p>title: 基础增强<br>date: 2019-01-01 00:12:43<br>tags: </p>
+<pre><code>- 反射
+- 单元测试
+- 注解
+</code></pre><p>categories: java</p>
+<hr>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><pre><code>1. Junit单元测试
+2. 反射
+3. 注解
+</code></pre><h2 id="Junit单元测试："><a href="#Junit单元测试：" class="headerlink" title="Junit单元测试："></a>Junit单元测试：</h2><pre><code>* 测试分类：
+    1. 黑盒测试：不需要写代码，给输入值，看程序是否能够输出期望的值。
+    2. 白盒测试：需要写代码的。关注程序具体的执行流程。
+
+* Junit使用：白盒测试
+    * 步骤：
+        1. 定义一个测试类(测试用例)
+            * 建议：
+                * 测试类名：被测试的类名Test        CalculatorTest
+                * 包名：xxx.xxx.xx.test        cn.itcast.test
+
+        2. 定义测试方法：可以独立运行
+            * 建议：
+                * 方法名：test测试的方法名        testAdd()  
+                * 返回值：void
+                * 参数列表：空参
+
+        3. 给方法加@Test
+        4. 导入junit依赖环境
+
+    * 判定结果：
+        * 红色：失败
+        * 绿色：成功
+        * 一般我们会使用断言操作来处理结果
+            * Assert.assertEquals(期望的结果,运算的结果);
+
+    * 补充：
+        * @Before:
+            * 修饰的方法会在测试方法之前被自动执行
+        * @After:
+            * 修饰的方法会在测试方法执行之后自动被执行
+</code></pre><h2 id="反射：框架设计的灵魂"><a href="#反射：框架设计的灵魂" class="headerlink" title="反射：框架设计的灵魂"></a>反射：框架设计的灵魂</h2><pre><code>* 框架：半成品软件。可以在框架的基础上进行软件开发，简化编码
+* 反射：将类的各个组成部分封装为其他对象，这就是反射机制
+    * 好处：
+        1. 可以在程序运行过程中，操作这些对象。
+        2. 可以解耦，提高程序的可扩展性。
+
+
+* 获取Class对象的方式：
+    1. Class.forName(&quot;全类名&quot;)：将字节码文件加载进内存，返回Class对象
+        * 多用于配置文件，将类名定义在配置文件中。读取文件，加载类
+    2. 类名.class：通过类名的属性class获取
+        * 多用于参数的传递
+    3. 对象.getClass()：getClass()方法在Object类中定义着。
+        * 多用于对象的获取字节码的方式
+
+    * 结论：
+        同一个字节码文件(*.class)在一次程序运行过程中，只会被加载一次，不论通过哪一种方式获取的Class对象都是同一个。
+</code></pre><p><img src="\images\java基础增强.bmp" alt=""></p>
+<pre><code>* Class对象功能：
+    * 获取功能：
+        1. 获取成员变量们
+            * Field[] getFields() ：获取所有public修饰的成员变量
+            * Field getField(String name)   获取指定名称的 public修饰的成员变量
+
+            * Field[] getDeclaredFields()  获取所有的成员变量，不考虑修饰符
+            * Field getDeclaredField(String name)  
+        2. 获取构造方法们
+            * Constructor&lt;?&gt;[] getConstructors()  
+            * Constructor&lt;T&gt; getConstructor(类&lt;?&gt;... parameterTypes)  
+
+            * Constructor&lt;T&gt; getDeclaredConstructor(类&lt;?&gt;... parameterTypes)  
+            * Constructor&lt;?&gt;[] getDeclaredConstructors()  
+        3. 获取成员方法们：
+            * Method[] getMethods()  
+            * Method getMethod(String name, 类&lt;?&gt;... parameterTypes)  
+
+            * Method[] getDeclaredMethods()  
+            * Method getDeclaredMethod(String name, 类&lt;?&gt;... parameterTypes)  
+
+        4. 获取全类名    
+            * String getName()  
+
+
+* Field：成员变量
+    * 操作：
+        1. 设置值
+            * void set(Object obj, Object value)  
+        2. 获取值
+            * get(Object obj) 
+
+        3. 忽略访问权限修饰符的安全检查
+            * setAccessible(true):暴力反射
+
+
+
+* Constructor:构造方法
+    * 创建对象：
+        * T newInstance(Object... initargs)  
+
+        * 如果使用空参数构造方法创建对象，操作可以简化：Class对象的newInstance方法
+
+
+* Method：方法对象
+    * 执行方法：
+        * Object invoke(Object obj, Object... args)  
+
+    * 获取方法名称：
+        * String getName:获取方法名
+
+
+* 案例：
+    * 需求：写一个&quot;框架&quot;，不能改变该类的任何代码的前提下，可以帮我们创建任意类的对象，并且执行其中任意方法
+        * 实现：
+            1. 配置文件
+            2. 反射
+        * 步骤：
+            1. 将需要创建的对象的全类名和需要执行的方法定义在配置文件中
+            2. 在程序中加载读取配置文件
+            3. 使用反射技术来加载类文件进内存
+            4. 创建对象
+            5. 执行方法
+</code></pre><h2 id="注解："><a href="#注解：" class="headerlink" title="注解："></a>注解：</h2><pre><code>* 概念：说明程序的。给计算机看的
+* 注释：用文字描述程序的。给程序员看的
+
+* 定义：注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释。
+* 概念描述：
+    * JDK1.5之后的新特性
+    * 说明程序的
+    * 使用注解：@注解名称
+</code></pre><p>​    </p>
+<pre><code>* 作用分类：
+    ①编写文档：通过代码里标识的注解生成文档【生成文档doc文档】
+    ②代码分析：通过代码里标识的注解对代码进行分析【使用反射】
+    ③编译检查：通过代码里标识的注解让编译器能够实现基本的编译检查【Override】
+
+
+* JDK中预定义的一些注解
+    * @Override    ：检测被该注解标注的方法是否是继承自父类(接口)的
+    * @Deprecated：该注解标注的内容，表示已过时
+    * @SuppressWarnings：压制警告
+        * 一般传递参数all  @SuppressWarnings(&quot;all&quot;)
+
+* 自定义注解
+    * 格式：
+        元注解
+        public @interface 注解名称{
+            属性列表;
+        }
+
+    * 本质：注解本质上就是一个接口，该接口默认继承Annotation接口
+        * public interface MyAnno extends java.lang.annotation.Annotation {}
+
+    * 属性：接口中的抽象方法
+        * 要求：
+            1. 属性的返回值类型有下列取值
+                * 基本数据类型
+                * String
+                * 枚举
+                * 注解
+                * 以上类型的数组
+
+            2. 定义了属性，在使用时需要给属性赋值
+                1. 如果定义属性时，使用default关键字给属性默认初始化值，则使用注解时，可以不进行属性的赋值。
+                2. 如果只有一个属性需要赋值，并且属性的名称是value，则value可以省略，直接定义值即可。
+                3. 数组赋值时，值使用{}包裹。如果数组中只有一个值，则{}可以省略
+
+    * 元注解：用于描述注解的注解
+        * @Target：描述注解能够作用的位置
+            * ElementType取值：
+                * TYPE：可以作用于类上
+                * METHOD：可以作用于方法上
+                * FIELD：可以作用于成员变量上
+        * @Retention：描述注解被保留的阶段
+            * @Retention(RetentionPolicy.RUNTIME)：当前被描述的注解，会保留到class字节码文件中，并被JVM读取到
+        * @Documented：描述注解是否被抽取到api文档中
+        * @Inherited：描述注解是否被子类继承
+
+
+* 在程序使用(解析)注解：获取注解中定义的属性值
+    1. 获取注解定义的位置的对象  （Class，Method,Field）
+    2. 获取指定的注解
+        * getAnnotation(Class)
+        //其实就是在内存中生成了一个该注解接口的子类实现对象
+
+                public class ProImpl implements Pro{
+                    public String className(){
+                        return &quot;cn.itcast.annotation.Demo1&quot;;
+                    }
+                    public String methodName(){
+                        return &quot;show&quot;;
+                    }
+                }
+    3. 调用注解中的抽象方法获取配置的属性值
+
+
+* 案例：简单的测试框架
+* 小结：
+    1. 以后大多数时候，我们会使用注解，而不是自定义注解
+    2. 注解给谁用？
+        1. 编译器
+        2. 给解析程序用
+    3. 注解不是程序的一部分，可以理解为注解就是一个标签
+</code></pre>
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="http://Wang-Ben.github.io" class="b-link-green">Hexo</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2019/01/12/ji-chu-jia-qiang-bi-ji/" class="b-link-green"></a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/2019/01/12/mysql-yue-shu-ke-tang-bi-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">title: mysql基础加强
+date: 2019-01-02 00:12:43
+tags: 
+    - mysql
+    - sql
+categories: 数据库
+目录1. DQL:查询语句
+    1. 排序查询
+    2.</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-12
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            ben
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2019/01/12/duo-tai/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">
+多态：同一操作作用于不同的对象，可以有不同的解释，产生不同的执行结果，这就是多态性
+  编译时多态：重载
+  ​    运行时多态（编译类型和运行类型不一致）：
+  ​            1. 重写
+  ​              </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            ben
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+			
+                <br>
+                <span id="busuanzi_container_site_pv">
+                    本站总访问量 <span id="busuanzi_value_site_pv" style="color: #fff;"></span> 次,&nbsp;
+                </span>
+				<span id="busuanzi_container_site_uv">
+                    访客数 <span id="busuanzi_value_site_uv" style="color: #fff;"></span> 人.
+                </span>
+			
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:chenjiayin1990@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 184125908" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

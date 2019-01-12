@@ -1,0 +1,1003 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="JDBC加强, Hexo">
+    <meta name="description" content="目录1. 数据库连接池
+
+2. Spring JDBC : JDBC Template
+
+数据库连接池1. 概念：其实就是一个容器(集合)，存放数据库连接的容器。
+        当系统初始化好后，容器被创建，容器中会申请一些连接对象，当用">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>JDBC加强 | Hexo</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">Hexo</span>
+                    </a>
+                </div>
+                
+
+<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Hexo</div>
+        <div class="logo-desc">
+            
+            遗忘世界
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:chenjiayin1990@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 184125908" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        JDBC加强
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/数据库连接池/" target="_blank">
+                    <span class="chip bg-color">数据库连接池</span>
+                </a>
+                
+                <a href="/tags/JDBC-Template/" target="_blank">
+                    <span class="chip bg-color">JDBC Template</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                <!--<span class="post-cate" style="margin-right: 0px">-->
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/web基础/" class="post-category" target="_blank">
+                        web基础
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2019-01-02
+                </span>
+				
+				
+                    <span id="busuanzi_container_page_pv" class="post-read">
+                    <i class="fa fa-eye fa-fw"></i>阅读 <span id="busuanzi_value_page_pv"></span>
+				
+            </span></div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><pre><code>1. 数据库连接池
+
+2. Spring JDBC : JDBC Template
+</code></pre><p><img src="\images\数据库连接池.bmp" alt=""></p>
+<h2 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h2><pre><code>1. 概念：其实就是一个容器(集合)，存放数据库连接的容器。
+        当系统初始化好后，容器被创建，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问完之后，会将连接对象归还给容器。
+
+2. 好处：
+    1. 节约资源
+    2. 用户访问高效
+
+3. 实现：
+    1. 标准接口：DataSource   javax.sql包下的
+        1. 方法：
+            * 获取连接：getConnection()
+            * 归还连接：Connection.close()。如果连接对象Connection是从连接池中获取的，那么调用Connection.close()方法，则不会再关闭连接了。而是归还连接
+
+    2. 一般我们不去实现它，有数据库厂商来实现
+        1. C3P0：数据库连接池技术
+        2. Druid：数据库连接池实现技术，由阿里巴巴提供的
+
+
+4. C3P0：数据库连接池技术
+    * 步骤：
+        1. 导入jar包 (两个) c3p0-0.9.5.2.jar mchange-commons-java-0.2.12.jar ，
+            * 不要忘记导入数据库驱动jar包
+        2. 定义配置文件：
+            * 名称： c3p0.properties 或者 c3p0-config.xml
+            * 路径：直接将文件放在src目录下即可。
+
+        3. 创建核心对象 数据库连接池对象 ComboPooledDataSource
+        4. 获取连接： getConnection
+    * 代码：
+         //1.创建数据库连接池对象
+        DataSource ds  = new ComboPooledDataSource();
+        //2. 获取连接对象
+        Connection conn = ds.getConnection();
+5. Druid：数据库连接池实现技术，由阿里巴巴提供的
+    1. 步骤：
+        1. 导入jar包 druid-1.0.9.jar
+        2. 定义配置文件：
+            * 是properties形式的
+            * 可以叫任意名称，可以放在任意目录下
+        3. 加载配置文件。Properties
+        4. 获取数据库连接池对象：通过工厂来来获取  DruidDataSourceFactory
+        5. 获取连接：getConnection
+    * 代码：
+         //3.加载配置文件
+        Properties pro = new Properties();
+        InputStream is = DruidDemo.class.getClassLoader().getResourceAsStream(&quot;druid.properties&quot;);
+        pro.load(is);
+        //4.获取连接池对象
+        DataSource ds = DruidDataSourceFactory.createDataSource(pro);
+        //5.获取连接
+        Connection conn = ds.getConnection();
+    2. 定义工具类
+        1. 定义一个类 JDBCUtils
+        2. 提供静态代码块加载配置文件，初始化连接池对象
+        3. 提供方法
+            1. 获取连接方法：通过数据库连接池获取连接
+            2. 释放资源
+            3. 获取连接池的方法
+
+
+    * 代码：
+        public class JDBCUtils {
+
+            //1.定义成员变量 DataSource
+            private static DataSource ds ;
+
+            static{
+                try {
+                    //1.加载配置文件
+                    Properties pro = new Properties();
+                    pro.load(JDBCUtils.class.getClassLoader().getResourceAsStream(&quot;druid.properties&quot;));
+                    //2.获取DataSource
+                    ds = DruidDataSourceFactory.createDataSource(pro);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            /**
+             * 获取连接
+             */
+            public static Connection getConnection() throws SQLException {
+                return ds.getConnection();
+            }
+
+            /**
+             * 释放资源
+             */
+            public static void close(Statement stmt,Connection conn){
+               /* if(stmt != null){
+                    try {
+                        stmt.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                if(conn != null){
+                    try {
+                        conn.close();//归还连接
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }*/
+
+               close(null,stmt,conn);
+            }
+</code></pre><p>​<br>                public static void close(ResultSet rs , Statement stmt, Connection conn){</p>
+<p>​<br>                    if(rs != null){<br>                        try {<br>                            rs.close();<br>                        } catch (SQLException e) {<br>                            e.printStackTrace();<br>                        }<br>                    }</p>
+<p>​<br>                    if(stmt != null){<br>                        try {<br>                            stmt.close();<br>                        } catch (SQLException e) {<br>                            e.printStackTrace();<br>                        }<br>                    }</p>
+<pre><code>                if(conn != null){
+                    try {
+                        conn.close();//归还连接
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            /**
+             * 获取连接池方法
+             */
+
+            public static DataSource getDataSource(){
+                return  ds;
+            }
+
+        }
+</code></pre><h2 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h2><pre><code>* Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发
+* 步骤：
+    1. 导入jar包
+    2. 创建JdbcTemplate对象。依赖于数据源DataSource
+        * JdbcTemplate template = new JdbcTemplate(ds);
+
+    3. 调用JdbcTemplate的方法来完成CRUD的操作
+        * update():执行DML语句。增、删、改语句
+        * queryForMap():查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合
+            * 注意：这个方法查询的结果集长度只能是1
+        * queryForList():查询结果将结果集封装为list集合
+            * 注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中
+        * query():查询结果，将结果封装为JavaBean对象
+            * query的参数：RowMapper
+                * 一般我们使用BeanPropertyRowMapper实现类。可以完成数据到JavaBean的自动封装
+                * new BeanPropertyRowMapper&lt;类型&gt;(类型.class)
+        * queryForObject：查询结果，将结果封装为对象
+            * 一般用于聚合函数的查询
+
+    4. 练习：
+        * 需求：
+            1. 修改1号数据的 salary 为 10000
+            2. 添加一条记录
+            3. 删除刚才添加的记录
+            4. 查询id为1的记录，将其封装为Map集合
+            5. 查询所有记录，将其封装为List
+            6. 查询所有记录，将其封装为Emp对象的List集合
+            7. 查询总记录数
+
+        * 代码：
+
+            import cn.itcast.domain.Emp;
+            import cn.itcast.utils.JDBCUtils;
+            import org.junit.Test;
+            import org.springframework.jdbc.core.BeanPropertyRowMapper;
+            import org.springframework.jdbc.core.JdbcTemplate;
+            import org.springframework.jdbc.core.RowMapper;
+
+            import java.sql.Date;
+            import java.sql.ResultSet;
+            import java.sql.SQLException;
+            import java.util.List;
+            import java.util.Map;
+
+            public class JdbcTemplateDemo2 {
+
+                //Junit单元测试，可以让方法独立执行
+</code></pre><p>​<br>                    //1. 获取JDBCTemplate对象<br>                    private JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());<br>                    /**</p>
+<pre><code>                 * 1. 修改1号数据的 salary 为 10000
+                 */
+                @Test
+                public void test1(){
+
+                    //2. 定义sql
+                    String sql = &quot;update emp set salary = 10000 where id = 1001&quot;;
+                    //3. 执行sql
+                    int count = template.update(sql);
+                    System.out.println(count);
+                }
+
+                /**
+                 * 2. 添加一条记录
+                 */
+                @Test
+                public void test2(){
+                    String sql = &quot;insert into emp(id,ename,dept_id) values(?,?,?)&quot;;
+                    int count = template.update(sql, 1015, &quot;郭靖&quot;, 10);
+                    System.out.println(count);
+
+                }
+
+                /**
+                 * 3.删除刚才添加的记录
+                 */
+                @Test
+                public void test3(){
+                    String sql = &quot;delete from emp where id = ?&quot;;
+                    int count = template.update(sql, 1015);
+                    System.out.println(count);
+                }
+
+                /**
+                 * 4.查询id为1001的记录，将其封装为Map集合
+                 * 注意：这个方法查询的结果集长度只能是1
+                 */
+                @Test
+                public void test4(){
+                    String sql = &quot;select * from emp where id = ? or id = ?&quot;;
+                    Map&lt;String, Object&gt; map = template.queryForMap(sql, 1001,1002);
+                    System.out.println(map);
+                    //{id=1001, ename=孙悟空, job_id=4, mgr=1004, joindate=2000-12-17, salary=10000.00, bonus=null, dept_id=20}
+
+                }
+
+                /**
+                 * 5. 查询所有记录，将其封装为List
+                 */
+                @Test
+                public void test5(){
+                    String sql = &quot;select * from emp&quot;;
+                    List&lt;Map&lt;String, Object&gt;&gt; list = template.queryForList(sql);
+
+                    for (Map&lt;String, Object&gt; stringObjectMap : list) {
+                        System.out.println(stringObjectMap);
+                    }
+                }
+
+                /**
+                 * 6. 查询所有记录，将其封装为Emp对象的List集合
+                 */
+
+                @Test
+                public void test6(){
+                    String sql = &quot;select * from emp&quot;;
+                    List&lt;Emp&gt; list = template.query(sql, new RowMapper&lt;Emp&gt;() {
+
+                        @Override
+                        public Emp mapRow(ResultSet rs, int i) throws SQLException {
+                            Emp emp = new Emp();
+                            int id = rs.getInt(&quot;id&quot;);
+                            String ename = rs.getString(&quot;ename&quot;);
+                            int job_id = rs.getInt(&quot;job_id&quot;);
+                            int mgr = rs.getInt(&quot;mgr&quot;);
+                            Date joindate = rs.getDate(&quot;joindate&quot;);
+                            double salary = rs.getDouble(&quot;salary&quot;);
+                            double bonus = rs.getDouble(&quot;bonus&quot;);
+                            int dept_id = rs.getInt(&quot;dept_id&quot;);
+
+                            emp.setId(id);
+                            emp.setEname(ename);
+                            emp.setJob_id(job_id);
+                            emp.setMgr(mgr);
+                            emp.setJoindate(joindate);
+                            emp.setSalary(salary);
+                            emp.setBonus(bonus);
+                            emp.setDept_id(dept_id);
+
+                            return emp;
+                        }
+                    });
+</code></pre><p>​<br>                        for (Emp emp : list) {<br>                            System.out.println(emp);<br>                        }<br>                    }</p>
+<pre><code>                /**
+                 * 6. 查询所有记录，将其封装为Emp对象的List集合
+                 */
+
+                @Test
+                public void test6_2(){
+                    String sql = &quot;select * from emp&quot;;
+                    List&lt;Emp&gt; list = template.query(sql, new BeanPropertyRowMapper&lt;Emp&gt;(Emp.class));
+                    for (Emp emp : list) {
+                        System.out.println(emp);
+                    }
+                }
+
+                /**
+                 * 7. 查询总记录数
+                 */
+
+                @Test
+                public void test7(){
+                    String sql = &quot;select count(id) from emp&quot;;
+                    Long total = template.queryForObject(sql, Long.class);
+                    System.out.println(total);
+                }
+
+            }
+</code></pre>
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="http://Wang-Ben.github.io" class="b-link-green">Hexo</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2019/01/02/jdbc-lian-jie-chi-jdbctemplate-ke-tang-bi-ji/" class="b-link-green">JDBC加强</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/2019/01/02/jdbc-ke-tang-bi-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="JDBC入门">
+                        
+                        <span class="card-title">JDBC入门</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">目录1. JDBC基本概念
+2. 快速入门
+3. 对JDBC中各个接口和类详解
+
+JDBC：1. 概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库
+    * JDBC本质：其实是</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-02
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web基础/" class="post-category" target="_blank">
+                                    web基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JDBC/" target="_blank">
+                        <span class="chip bg-color">JDBC</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2019/01/02/mysql-ji-chu-ke-tang-bi-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="mysql基础入门">
+                        
+                        <span class="card-title">mysql基础入门</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">目录
+数据库的基本概念
+
+
+MySQL数据库软件
+
+安装
+卸载
+配置
+
+
+SQL
+
+
+数据库的基本概念1. 数据库的英文单词： DataBase 简称 ： DB
+2. 什么数据库？
+    * 用于存储和管理数据的仓库。
+
+3. 数据库的特</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/数据库/" class="post-category" target="_blank">
+                                    数据库
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/mysql/" target="_blank">
+                        <span class="chip bg-color">mysql</span>
+                    </a>
+                    
+                    <a href="/tags/sql/" target="_blank">
+                        <span class="chip bg-color">sql</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+			
+                <br>
+                <span id="busuanzi_container_site_pv">
+                    本站总访问量 <span id="busuanzi_value_site_pv" style="color: #fff;"></span> 次,&nbsp;
+                </span>
+				<span id="busuanzi_container_site_uv">
+                    访客数 <span id="busuanzi_value_site_uv" style="color: #fff;"></span> 人.
+                </span>
+			
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:chenjiayin1990@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 184125908" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

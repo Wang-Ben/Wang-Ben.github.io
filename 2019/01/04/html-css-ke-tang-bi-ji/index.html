@@ -5,13 +5,13 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="JDBC加强, Hexo">
-    <meta name="description" content="目录1. 数据库连接池
+    <meta name="keywords" content="css, Hexo">
+    <meta name="description" content="CSS：页面美化和布局控制1. 概念： Cascading Style Sheets 层叠样式表
+    * 层叠：多个样式可以作用在同一个html的元素上，同时生效
 
-2. Spring JDBC : JDBC Template
-
-数据库连接池1. 概念：其实就是一个容器(集合)，存放数据库连接的容器。
-        当系统初始化好后，容器被创建，容器中会申请一些连接对象，当用">
+2. 好处：
+    1. 功能强大
+    2. 将内容展示和样式控">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>JDBC加强 | Hexo</title>
+    <title>css | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -278,13 +278,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        JDBC加强
+                        css
                     </div>
                 </div>
             </div>
@@ -304,12 +304,8 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/数据库连接池/" target="_blank">
-                    <span class="chip bg-color">数据库连接池</span>
-                </a>
-                
-                <a href="/tags/JDBC-Template/" target="_blank">
-                    <span class="chip bg-color">JDBC Template</span>
+                <a href="/tags/css/" target="_blank">
+                    <span class="chip bg-color">css</span>
                 </a>
                 
             </div>
@@ -320,15 +316,15 @@
                 <!--<span class="post-cate" style="margin-right: 0px">-->
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/web基础/" class="post-category" target="_blank">
-                        web基础
+                    <a href="/categories/前端入门/" class="post-category" target="_blank">
+                        前端入门
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-01-08
+                    <i class="fa fa-clock-o fa-fw"></i>2019-01-04
                 </span>
 				
 				
@@ -340,307 +336,280 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><pre><code>1. 数据库连接池
-
-2. Spring JDBC : JDBC Template
-</code></pre><p><img src="\images\数据库连接池.bmp" alt=""></p>
-<h2 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h2><pre><code>1. 概念：其实就是一个容器(集合)，存放数据库连接的容器。
-        当系统初始化好后，容器被创建，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问完之后，会将连接对象归还给容器。
+                <h2 id="CSS：页面美化和布局控制"><a href="#CSS：页面美化和布局控制" class="headerlink" title="CSS：页面美化和布局控制"></a>CSS：页面美化和布局控制</h2><pre><code>1. 概念： Cascading Style Sheets 层叠样式表
+    * 层叠：多个样式可以作用在同一个html的元素上，同时生效
 
 2. 好处：
-    1. 节约资源
-    2. 用户访问高效
-
-3. 实现：
-    1. 标准接口：DataSource   javax.sql包下的
-        1. 方法：
-            * 获取连接：getConnection()
-            * 归还连接：Connection.close()。如果连接对象Connection是从连接池中获取的，那么调用Connection.close()方法，则不会再关闭连接了。而是归还连接
-
-    2. 一般我们不去实现它，有数据库厂商来实现
-        1. C3P0：数据库连接池技术
-        2. Druid：数据库连接池实现技术，由阿里巴巴提供的
+    1. 功能强大
+    2. 将内容展示和样式控制分离
+        * 降低耦合度。解耦
+        * 让分工协作更容易
+        * 提高开发效率
 
 
-4. C3P0：数据库连接池技术
-    * 步骤：
-        1. 导入jar包 (两个) c3p0-0.9.5.2.jar mchange-commons-java-0.2.12.jar ，
-            * 不要忘记导入数据库驱动jar包
-        2. 定义配置文件：
-            * 名称： c3p0.properties 或者 c3p0-config.xml
-            * 路径：直接将文件放在src目录下即可。
-
-        3. 创建核心对象 数据库连接池对象 ComboPooledDataSource
-        4. 获取连接： getConnection
-    * 代码：
-         //1.创建数据库连接池对象
-        DataSource ds  = new ComboPooledDataSource();
-        //2. 获取连接对象
-        Connection conn = ds.getConnection();
-5. Druid：数据库连接池实现技术，由阿里巴巴提供的
-    1. 步骤：
-        1. 导入jar包 druid-1.0.9.jar
-        2. 定义配置文件：
-            * 是properties形式的
-            * 可以叫任意名称，可以放在任意目录下
-        3. 加载配置文件。Properties
-        4. 获取数据库连接池对象：通过工厂来来获取  DruidDataSourceFactory
-        5. 获取连接：getConnection
-    * 代码：
-         //3.加载配置文件
-        Properties pro = new Properties();
-        InputStream is = DruidDemo.class.getClassLoader().getResourceAsStream(&quot;druid.properties&quot;);
-        pro.load(is);
-        //4.获取连接池对象
-        DataSource ds = DruidDataSourceFactory.createDataSource(pro);
-        //5.获取连接
-        Connection conn = ds.getConnection();
-    2. 定义工具类
-        1. 定义一个类 JDBCUtils
-        2. 提供静态代码块加载配置文件，初始化连接池对象
-        3. 提供方法
-            1. 获取连接方法：通过数据库连接池获取连接
-            2. 释放资源
-            3. 获取连接池的方法
-
-
-    * 代码：
-        public class JDBCUtils {
-
-            //1.定义成员变量 DataSource
-            private static DataSource ds ;
-
-            static{
-                try {
-                    //1.加载配置文件
-                    Properties pro = new Properties();
-                    pro.load(JDBCUtils.class.getClassLoader().getResourceAsStream(&quot;druid.properties&quot;));
-                    //2.获取DataSource
-                    ds = DruidDataSourceFactory.createDataSource(pro);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-
-            /**
-             * 获取连接
-             */
-            public static Connection getConnection() throws SQLException {
-                return ds.getConnection();
-            }
-
-            /**
-             * 释放资源
-             */
-            public static void close(Statement stmt,Connection conn){
-               /* if(stmt != null){
-                    try {
-                        stmt.close();
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
+3. CSS的使用：CSS与html结合方式
+    1. 内联样式
+         * 在标签内使用style属性指定css代码
+         * 如：&lt;div style=&quot;color:red;&quot;&gt;hello css&lt;/div&gt;
+    2. 内部样式
+        * 在head标签内，定义style标签，style标签的标签体内容就是css代码
+        * 如：
+            &lt;style&gt;
+                div{
+                    color:blue;
                 }
 
-                if(conn != null){
-                    try {
-                        conn.close();//归还连接
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                }*/
-
-               close(null,stmt,conn);
-            }
-</code></pre><p>​<br>                public static void close(ResultSet rs , Statement stmt, Connection conn){</p>
-<p>​<br>                    if(rs != null){<br>                        try {<br>                            rs.close();<br>                        } catch (SQLException e) {<br>                            e.printStackTrace();<br>                        }<br>                    }</p>
-<p>​<br>                    if(stmt != null){<br>                        try {<br>                            stmt.close();<br>                        } catch (SQLException e) {<br>                            e.printStackTrace();<br>                        }<br>                    }</p>
-<pre><code>                if(conn != null){
-                    try {
-                        conn.close();//归还连接
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
+            &lt;/style&gt;
+            &lt;div&gt;hello css&lt;/div&gt;
+    3. 外部样式
+        1. 定义css资源文件。
+        2. 在head标签内，定义link标签，引入外部的资源文件
+        * 如：
+            * a.css文件：
+                div{
+                    color:green;
                 }
-            }
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;css/a.css&quot;&gt;
+            &lt;div&gt;hello css&lt;/div&gt;
+            &lt;div&gt;hello css&lt;/div&gt;
 
-            /**
-             * 获取连接池方法
-             */
+    * 注意：
+        * 1,2,3种方式 css作用范围越来越大
+        * 1方式不常用，后期常用2,3
+        * 3种格式可以写为：
+            &lt;style&gt;
+                @import &quot;css/a.css&quot;;
+            &lt;/style&gt;
 
-            public static DataSource getDataSource(){
-                return  ds;
-            }
+4. css语法：
+    * 格式：
+        选择器 {
+            属性名1:属性值1;
+            属性名2:属性值2;
+            ...
+        }
+    * 选择器:筛选具有相似特征的元素
+    * 注意：
+        * 每一对属性需要使用；隔开，最后一对属性可以不加；
+
+
+5. 选择器：筛选具有相似特征的元素
+    * 分类：
+        1. 基础选择器
+            1. id选择器：选择具体的id属性值的元素.建议在一个html页面中id值唯一
+                * 语法：#id属性值{}
+            2. 元素选择器：选择具有相同标签名称的元素
+                * 语法： 标签名称{}
+                * 注意：id选择器优先级高于元素选择器
+            3. 类选择器：选择具有相同的class属性值的元素。
+                * 语法：.class属性值{}
+                * 注意：类选择器选择器优先级高于元素选择器
+        2. 扩展选择器：
+            1. 选择所有元素：
+                * 语法： *{}
+            2. 并集选择器：
+                * 选择器1,选择器2{}
+
+            3. 子选择器：筛选选择器1元素下的选择器2元素
+                * 语法：  选择器1 选择器2{}
+            4. 父选择器：筛选选择器2的父元素选择器1
+                * 语法：  选择器1 &gt; 选择器2{}
+
+            5. 属性选择器：选择元素名称，属性名=属性值的元素
+                * 语法：  元素名称[属性名=&quot;属性值&quot;]{}
+
+            6. 伪类选择器：选择一些元素具有的状态
+                * 语法： 元素:状态{}
+                * 如： &lt;a&gt;
+                    * 状态：
+                        * link：初始化的状态
+                        * visited：被访问过的状态
+                        * active：正在访问状态
+                        * hover：鼠标悬浮状态
+6. 属性
+    1. 字体、文本
+        * font-size：字体大小
+        * color：文本颜色
+        * text-align：对其方式
+        * line-height：行高 
+    2. 背景
+        * background：
+    3. 边框
+        * border：设置边框，符合属性
+    4. 尺寸
+        * width：宽度
+        * height：高度
+    5. 盒子模型：控制布局
+        * margin：外边距
+        * padding：内边距
+            * 默认情况下内边距会影响整个盒子的大小
+            * box-sizing: border-box;  设置盒子的属性，让width和height就是最终盒子的大小
+
+        * float：浮动
+            * left
+            * right
+</code></pre><h2 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h2><pre><code>    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;注册页面&lt;/title&gt;
+    &lt;style&gt;
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            background: url(&quot;img/register_bg.png&quot;) no-repeat center;
+            padding-top: 25px;
+        }
+
+        .rg_layout{
+            width: 900px;
+            height: 500px;
+            border: 8px solid #EEEEEE;
+            background-color: white;
+            /*让div水平居中*/
+            margin: auto;
+        }
+
+        .rg_left{
+            /*border: 1px solid red;*/
+            float: left;
+            margin: 15px;
+        }
+        .rg_left &gt; p:first-child{
+            color:#FFD026;
+            font-size: 20px;
+        }
+
+        .rg_left &gt; p:last-child{
+            color:#A6A6A6;
+            font-size: 20px;
 
         }
-</code></pre><h2 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h2><pre><code>* Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发
-* 步骤：
-    1. 导入jar包
-    2. 创建JdbcTemplate对象。依赖于数据源DataSource
-        * JdbcTemplate template = new JdbcTemplate(ds);
+</code></pre><p>​<br>            .rg_center{<br>                float: left;<br>               /<em> border: 1px solid red;</em>/</p>
+<pre><code>        }
 
-    3. 调用JdbcTemplate的方法来完成CRUD的操作
-        * update():执行DML语句。增、删、改语句
-        * queryForMap():查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合
-            * 注意：这个方法查询的结果集长度只能是1
-        * queryForList():查询结果将结果集封装为list集合
-            * 注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中
-        * query():查询结果，将结果封装为JavaBean对象
-            * query的参数：RowMapper
-                * 一般我们使用BeanPropertyRowMapper实现类。可以完成数据到JavaBean的自动封装
-                * new BeanPropertyRowMapper&lt;类型&gt;(类型.class)
-        * queryForObject：查询结果，将结果封装为对象
-            * 一般用于聚合函数的查询
+        .rg_right{
+            /*border: 1px solid red;*/
+            float: right;
+            margin: 15px;
+        }
 
-    4. 练习：
-        * 需求：
-            1. 修改1号数据的 salary 为 10000
-            2. 添加一条记录
-            3. 删除刚才添加的记录
-            4. 查询id为1的记录，将其封装为Map集合
-            5. 查询所有记录，将其封装为List
-            6. 查询所有记录，将其封装为Emp对象的List集合
-            7. 查询总记录数
+        .rg_right &gt; p:first-child{
+            font-size: 15px;
 
-        * 代码：
+        }
+        .rg_right p a {
+            color:pink;
+        }
 
-            import cn.itcast.domain.Emp;
-            import cn.itcast.utils.JDBCUtils;
-            import org.junit.Test;
-            import org.springframework.jdbc.core.BeanPropertyRowMapper;
-            import org.springframework.jdbc.core.JdbcTemplate;
-            import org.springframework.jdbc.core.RowMapper;
+        .td_left{
+            width: 100px;
+            text-align: right;
+            height: 45px;
+        }
+        .td_right{
+            padding-left: 50px ;
+        }
 
-            import java.sql.Date;
-            import java.sql.ResultSet;
-            import java.sql.SQLException;
-            import java.util.List;
-            import java.util.Map;
+        #username,#password,#email,#name,#tel,#birthday,#checkcode{
+            width: 251px;
+            height: 32px;
+            border: 1px solid #A6A6A6 ;
+            /*设置边框圆角*/
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+        #checkcode{
+            width: 110px;
+        }
 
-            public class JdbcTemplateDemo2 {
+        #img_check{
+            height: 32px;
+            vertical-align: middle;
+        }
 
-                //Junit单元测试，可以让方法独立执行
-</code></pre><p>​<br>                    //1. 获取JDBCTemplate对象<br>                    private JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());<br>                    /**</p>
-<pre><code>                 * 1. 修改1号数据的 salary 为 10000
-                 */
-                @Test
-                public void test1(){
+        #btn_sub{
+            width: 150px;
+            height: 40px;
+            background-color: #FFD026;
+            border: 1px solid #FFD026 ;
+        }
 
-                    //2. 定义sql
-                    String sql = &quot;update emp set salary = 10000 where id = 1001&quot;;
-                    //3. 执行sql
-                    int count = template.update(sql);
-                    System.out.println(count);
-                }
+    &lt;/style&gt;
 
-                /**
-                 * 2. 添加一条记录
-                 */
-                @Test
-                public void test2(){
-                    String sql = &quot;insert into emp(id,ename,dept_id) values(?,?,?)&quot;;
-                    int count = template.update(sql, 1015, &quot;郭靖&quot;, 10);
-                    System.out.println(count);
+    &lt;/head&gt;
+    &lt;body&gt;
 
-                }
+    &lt;div class=&quot;rg_layout&quot;&gt;
+        &lt;div class=&quot;rg_left&quot;&gt;
+            &lt;p&gt;新用户注册&lt;/p&gt;
+            &lt;p&gt;USER REGISTER&lt;/p&gt;
 
-                /**
-                 * 3.删除刚才添加的记录
-                 */
-                @Test
-                public void test3(){
-                    String sql = &quot;delete from emp where id = ?&quot;;
-                    int count = template.update(sql, 1015);
-                    System.out.println(count);
-                }
+        &lt;/div&gt;
 
-                /**
-                 * 4.查询id为1001的记录，将其封装为Map集合
-                 * 注意：这个方法查询的结果集长度只能是1
-                 */
-                @Test
-                public void test4(){
-                    String sql = &quot;select * from emp where id = ? or id = ?&quot;;
-                    Map&lt;String, Object&gt; map = template.queryForMap(sql, 1001,1002);
-                    System.out.println(map);
-                    //{id=1001, ename=孙悟空, job_id=4, mgr=1004, joindate=2000-12-17, salary=10000.00, bonus=null, dept_id=20}
+        &lt;div class=&quot;rg_center&quot;&gt;
+            &lt;div class=&quot;rg_form&quot;&gt;
+                &lt;!--定义表单 form--&gt;
+                &lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
+                    &lt;table&gt;
+                        &lt;tr&gt;
+                            &lt;td class=&quot;td_left&quot;&gt;&lt;label for=&quot;username&quot;&gt;用户名&lt;/label&gt;&lt;/td&gt;
+                            &lt;td class=&quot;td_right&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; placeholder=&quot;请输入用户名&quot;&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
 
-                }
+                        &lt;tr&gt;
+                            &lt;td class=&quot;td_left&quot;&gt;&lt;label for=&quot;password&quot;&gt;密码&lt;/label&gt;&lt;/td&gt;
+                            &lt;td class=&quot;td_right&quot;&gt;&lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot; placeholder=&quot;请输入密码&quot;&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
 
-                /**
-                 * 5. 查询所有记录，将其封装为List
-                 */
-                @Test
-                public void test5(){
-                    String sql = &quot;select * from emp&quot;;
-                    List&lt;Map&lt;String, Object&gt;&gt; list = template.queryForList(sql);
+                        &lt;tr&gt;
+                            &lt;td class=&quot;td_left&quot;&gt;&lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;&lt;/td&gt;
+                            &lt;td class=&quot;td_right&quot;&gt;&lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;请输入邮箱&quot;&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
 
-                    for (Map&lt;String, Object&gt; stringObjectMap : list) {
-                        System.out.println(stringObjectMap);
-                    }
-                }
+                        &lt;tr&gt;
+                            &lt;td class=&quot;td_left&quot;&gt;&lt;label for=&quot;name&quot;&gt;姓名&lt;/label&gt;&lt;/td&gt;
+                            &lt;td class=&quot;td_right&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot; placeholder=&quot;请输入姓名&quot;&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
 
-                /**
-                 * 6. 查询所有记录，将其封装为Emp对象的List集合
-                 */
+                        &lt;tr&gt;
+                            &lt;td class=&quot;td_left&quot;&gt;&lt;label for=&quot;tel&quot;&gt;手机号&lt;/label&gt;&lt;/td&gt;
+                            &lt;td class=&quot;td_right&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;tel&quot; id=&quot;tel&quot; placeholder=&quot;请输入手机号&quot;&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
 
-                @Test
-                public void test6(){
-                    String sql = &quot;select * from emp&quot;;
-                    List&lt;Emp&gt; list = template.query(sql, new RowMapper&lt;Emp&gt;() {
+                        &lt;tr&gt;
+                            &lt;td class=&quot;td_left&quot;&gt;&lt;label&gt;性别&lt;/label&gt;&lt;/td&gt;
+                            &lt;td class=&quot;td_right&quot;&gt;
+                                &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;male&quot;&gt; 男
+                                &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;female&quot;&gt; 女
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
 
-                        @Override
-                        public Emp mapRow(ResultSet rs, int i) throws SQLException {
-                            Emp emp = new Emp();
-                            int id = rs.getInt(&quot;id&quot;);
-                            String ename = rs.getString(&quot;ename&quot;);
-                            int job_id = rs.getInt(&quot;job_id&quot;);
-                            int mgr = rs.getInt(&quot;mgr&quot;);
-                            Date joindate = rs.getDate(&quot;joindate&quot;);
-                            double salary = rs.getDouble(&quot;salary&quot;);
-                            double bonus = rs.getDouble(&quot;bonus&quot;);
-                            int dept_id = rs.getInt(&quot;dept_id&quot;);
+                        &lt;tr&gt;
+                            &lt;td class=&quot;td_left&quot;&gt;&lt;label for=&quot;birthday&quot;&gt;出生日期&lt;/label&gt;&lt;/td&gt;
+                            &lt;td class=&quot;td_right&quot;&gt;&lt;input type=&quot;date&quot; name=&quot;birthday&quot; id=&quot;birthday&quot; placeholder=&quot;请输入出生日期&quot;&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
 
-                            emp.setId(id);
-                            emp.setEname(ename);
-                            emp.setJob_id(job_id);
-                            emp.setMgr(mgr);
-                            emp.setJoindate(joindate);
-                            emp.setSalary(salary);
-                            emp.setBonus(bonus);
-                            emp.setDept_id(dept_id);
+                        &lt;tr&gt;
+                            &lt;td class=&quot;td_left&quot;&gt;&lt;label for=&quot;checkcode&quot; &gt;验证码&lt;/label&gt;&lt;/td&gt;
+                            &lt;td class=&quot;td_right&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;checkcode&quot; id=&quot;checkcode&quot; placeholder=&quot;请输入验证码&quot;&gt;
+                                &lt;img id=&quot;img_check&quot; src=&quot;img/verify_code.jpg&quot;&gt;
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+</code></pre><p>​<br>                            <tr><br>                                <td colspan="2" align="center"><input type="submit" id="btn_sub" value="注册"></td><br>                            </tr><br>                        </p>
+<pre><code>                &lt;/form&gt;
+</code></pre><p>​<br>                </p>
+<pre><code>        &lt;/div&gt;
 
-                            return emp;
-                        }
-                    });
-</code></pre><p>​<br>                        for (Emp emp : list) {<br>                            System.out.println(emp);<br>                        }<br>                    }</p>
-<pre><code>                /**
-                 * 6. 查询所有记录，将其封装为Emp对象的List集合
-                 */
+        &lt;div class=&quot;rg_right&quot;&gt;
+            &lt;p&gt;已有账号?&lt;a href=&quot;#&quot;&gt;立即登录&lt;/a&gt;&lt;/p&gt;
+        &lt;/div&gt;
+</code></pre><p>​<br>        </p>
+<p>​<br>        <br>        </p>
 
-                @Test
-                public void test6_2(){
-                    String sql = &quot;select * from emp&quot;;
-                    List&lt;Emp&gt; list = template.query(sql, new BeanPropertyRowMapper&lt;Emp&gt;(Emp.class));
-                    for (Emp emp : list) {
-                        System.out.println(emp);
-                    }
-                }
-
-                /**
-                 * 7. 查询总记录数
-                 */
-
-                @Test
-                public void test7(){
-                    String sql = &quot;select count(id) from emp&quot;;
-                    Long total = template.queryForObject(sql, Long.class);
-                    System.out.println(total);
-                }
-
-            }
-</code></pre>
             </div>
             <hr>
 
@@ -778,7 +747,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://Wang-Ben.github.io" class="b-link-green">Hexo</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/01/08/jdbc-lian-jie-chi-jdbctemplate-ke-tang-bi-ji/" class="b-link-green">JDBC加强</a>
+                    <a href="/2019/01/04/html-css-ke-tang-bi-ji/" class="b-link-green">css</a>
                 </p>
             </div>
         </div>
@@ -800,28 +769,35 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">本篇</div>
+            <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2019/01/08/jdbc-lian-jie-chi-jdbctemplate-ke-tang-bi-ji/">
+                <a href="/2019/01/04/servlet2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="JDBC加强">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Servlet(二)">
                         
-                        <span class="card-title">JDBC加强</span>
+                        <span class="card-title">Servlet(二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">目录1. 数据库连接池
+                    <div class="summary">
 
-2. Spring JDBC : JDBC Template
 
-数据库连接池1. 概念：其实就是一个容器(集合)，存放数据库连接的容器。
-        当系统初始化好后，容器被创建，容器中会申请一些连接对象，当用</div>
+
+Servlet：1. 概念
+2. 步骤
+3. 执行原理
+4. 生命周期
+5. Servlet3.0 注解配置
+6. Servlet的体系结构    
+    Servlet -- 接口
+        |
+    GenericSe</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-08
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -834,16 +810,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/数据库连接池/" target="_blank">
-                        <span class="chip bg-color">数据库连接池</span>
-                    </a>
-                    
-                    <a href="/tags/JDBC-Template/" target="_blank">
-                        <span class="chip bg-color">JDBC Template</span>
+                    <a href="/tags/Servlet/" target="_blank">
+                        <span class="chip bg-color">Servlet</span>
                     </a>
                     
                 </div>
@@ -855,32 +826,28 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2019/01/07/jdbc-ke-tang-bi-ji/">
+                <a href="/2019/01/04/bootstrap-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="JDBC入门">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Bootstrap入门">
                         
-                        <span class="card-title">JDBC入门</span>
+                        <span class="card-title">Bootstrap入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">目录1. JDBC基本概念
-2. 快速入门
-3. 对JDBC中各个接口和类详解
-
-JDBC：1. 概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库
-    * JDBC本质：其实是</div>
+                    <div class="summary">Bootstrap：1. 概念： 一个前端开发的框架，Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。
+  </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-07
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/web基础/" class="post-category" target="_blank">
-                                    web基础
+                            <a href="/categories/前端框架/" class="post-category" target="_blank">
+                                    前端框架
                                 </a>
                             
                             
@@ -890,8 +857,8 @@ JDBC：1. 概念：Java DataBase Connectivity  Java 数据库连接， Java语�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JDBC/" target="_blank">
-                        <span class="chip bg-color">JDBC</span>
+                    <a href="/tags/Bootstrap/" target="_blank">
+                        <span class="chip bg-color">Bootstrap</span>
                     </a>
                     
                 </div>
