@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Wang-Ben.github.io/"/>
-  <updated>2019-01-12T15:47:43.835Z</updated>
+  <updated>2019-01-26T05:59:55.420Z</updated>
   <id>http://Wang-Ben.github.io/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>dom4j解析xml(demo)</title>
+    <link href="http://Wang-Ben.github.io/2019/01/25/dom4j-jie-xi-xml/"/>
+    <id>http://Wang-Ben.github.io/2019/01/25/dom4j-jie-xi-xml/</id>
+    <published>2019-01-24T16:12:43.000Z</published>
+    <updated>2019-01-26T05:59:55.420Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;转载自：&lt;/p&gt;
+&lt;p&gt;​         &lt;a href=&quot;https://www.cnblogs.com/sharpest/p/7877501.html&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://Wang-Ben.github.io/categories/java/"/>
+    
+    
+      <category term="xml" scheme="http://Wang-Ben.github.io/tags/xml/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://Wang-Ben.github.io/2019/01/13/servlet-http-request-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/13/servlet-http-request-bi-ji/</id>
+    <published>2019-01-13T12:02:52.040Z</published>
+    <updated>2019-01-13T12:29:28.900Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;p&gt;title: HTTP入门&lt;br&gt;date: 2019-01-04 00:12:43&lt;br&gt;tags: HTTP&lt;br&gt;categories: web基础&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Redis入门</title>
@@ -43,6 +95,34 @@
     
     
       <category term="Redis" scheme="http://Wang-Ben.github.io/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AJAX入门</title>
+    <link href="http://Wang-Ben.github.io/2019/01/07/ajax-json-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/07/ajax-json-bi-ji/</id>
+    <published>2019-01-06T16:12:43.000Z</published>
+    <updated>2019-01-13T12:42:58.500Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. AJAX：
+2. JSON
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;AJAX：&quot;&gt;&lt;a href=&quot;#AJAX：&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="web基础" scheme="http://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="AJAX" scheme="http://Wang-Ben.github.io/tags/AJAX/"/>
     
   </entry>
   
@@ -103,6 +183,38 @@
     
     
       <category term="JQuery" scheme="http://Wang-Ben.github.io/tags/JQuery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JSP入门</title>
+    <link href="http://Wang-Ben.github.io/2019/01/06/el-jstl-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/06/el-jstl-bi-ji/</id>
+    <published>2019-01-05T16:12:43.000Z</published>
+    <updated>2019-01-13T12:39:15.084Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. JSP:
+    1. 指令
+    2. 注释
+    3. 内置对象
+
+2. MVC开发模式
+3.
+        
+      
+    
+    </summary>
+    
+      <category term="web基础" scheme="http://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JSP" scheme="http://Wang-Ben.github.io/tags/JSP/"/>
     
   </entry>
   
@@ -196,6 +308,37 @@
   </entry>
   
   <entry>
+    <title>会话技术</title>
+    <link href="http://Wang-Ben.github.io/2019/01/05/cookie-session-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/05/cookie-session-bi-ji/</id>
+    <published>2019-01-04T16:12:43.000Z</published>
+    <updated>2019-01-13T12:38:30.161Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. 会话技术
+    1. Cookie
+    2. Session
+2.
+        
+      
+    
+    </summary>
+    
+      <category term="web基础" scheme="http://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Cookie" scheme="http://Wang-Ben.github.io/tags/Cookie/"/>
+    
+      <category term="Session" scheme="http://Wang-Ben.github.io/tags/Session/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Servlet(二)</title>
     <link href="http://Wang-Ben.github.io/2019/01/04/servlet2/"/>
     <id>http://Wang-Ben.github.io/2019/01/04/servlet2/</id>
@@ -212,6 +355,62 @@
 
 &lt;p&gt;&lt;img src=&quot;/images/image.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;../images/image.jpg&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="web基础" scheme="http://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Servlet" scheme="http://Wang-Ben.github.io/tags/Servlet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTTP</title>
+    <link href="http://Wang-Ben.github.io/2019/01/04/response-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/04/response-bi-ji/</id>
+    <published>2019-01-03T16:12:43.000Z</published>
+    <updated>2019-01-13T12:31:54.824Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. HTTP协议：响应消息
+2. Response对象
+3.
+        
+      
+    
+    </summary>
+    
+      <category term="web基础" scheme="http://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="HTTP" scheme="http://Wang-Ben.github.io/tags/HTTP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Servlet入门</title>
+    <link href="http://Wang-Ben.github.io/2019/01/04/servlet1/"/>
+    <id>http://Wang-Ben.github.io/2019/01/04/servlet1/</id>
+    <published>2019-01-03T16:12:43.000Z</published>
+    <updated>2019-01-04T14:31:10.981Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. web相关概念回顾
+2. web服务器软件：Tomcat
+3.
         
       
     
@@ -273,34 +472,6 @@
     
     
       <category term="Bootstrap" scheme="http://Wang-Ben.github.io/tags/Bootstrap/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Servlet入门</title>
-    <link href="http://Wang-Ben.github.io/2019/01/04/servlet1/"/>
-    <id>http://Wang-Ben.github.io/2019/01/04/servlet1/</id>
-    <published>2019-01-03T16:12:43.000Z</published>
-    <updated>2019-01-04T14:31:10.981Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. web相关概念回顾
-2. web服务器软件：Tomcat
-3.
-        
-      
-    
-    </summary>
-    
-      <category term="web基础" scheme="http://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="Servlet" scheme="http://Wang-Ben.github.io/tags/Servlet/"/>
     
   </entry>
   
@@ -425,127 +596,6 @@
       <category term="mysql" scheme="http://Wang-Ben.github.io/tags/mysql/"/>
     
       <category term="sql" scheme="http://Wang-Ben.github.io/tags/sql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JDBC加强</title>
-    <link href="http://Wang-Ben.github.io/2019/01/02/jdbc-lian-jie-chi-jdbctemplate-ke-tang-bi-ji/"/>
-    <id>http://Wang-Ben.github.io/2019/01/02/jdbc-lian-jie-chi-jdbctemplate-ke-tang-bi-ji/</id>
-    <published>2019-01-01T16:12:43.000Z</published>
-    <updated>2019-01-12T15:29:35.321Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. 数据库连接池
-
-2. Spring JDBC : JDBC
-        
-      
-    
-    </summary>
-    
-      <category term="web基础" scheme="http://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="数据库连接池" scheme="http://Wang-Ben.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/"/>
-    
-      <category term="JDBC Template" scheme="http://Wang-Ben.github.io/tags/JDBC-Template/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JDBC入门</title>
-    <link href="http://Wang-Ben.github.io/2019/01/02/jdbc-ke-tang-bi-ji/"/>
-    <id>http://Wang-Ben.github.io/2019/01/02/jdbc-ke-tang-bi-ji/</id>
-    <published>2019-01-01T16:12:43.000Z</published>
-    <updated>2019-01-12T15:29:13.888Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. JDBC基本概念
-2. 快速入门
-3. 对JDBC中各个接口和类详解
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="web基础" scheme="http://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="JDBC" scheme="http://Wang-Ben.github.io/tags/JDBC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基础增强</title>
-    <link href="http://Wang-Ben.github.io/2019/01/01/ji-chu-jia-qiang-bi-ji/"/>
-    <id>http://Wang-Ben.github.io/2019/01/01/ji-chu-jia-qiang-bi-ji/</id>
-    <published>2018-12-31T16:12:43.000Z</published>
-    <updated>2019-01-12T15:58:59.051Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. Junit单元测试
-2. 反射
-3. 注解
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;Junit单元测试：&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://Wang-Ben.github.io/categories/java/"/>
-    
-    
-      <category term="反射" scheme="http://Wang-Ben.github.io/tags/%E5%8F%8D%E5%B0%84/"/>
-    
-      <category term="单元测试" scheme="http://Wang-Ben.github.io/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="注解" scheme="http://Wang-Ben.github.io/tags/%E6%B3%A8%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>多态</title>
-    <link href="http://Wang-Ben.github.io/2019/01/01/duo-tai/"/>
-    <id>http://Wang-Ben.github.io/2019/01/01/duo-tai/</id>
-    <published>2018-12-31T16:12:43.000Z</published>
-    <updated>2019-01-12T16:03:43.496Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;多态：同一操作作用于不同的对象，可以有不同的解释，产生不同的执行结果，这就是多态性&lt;br&gt;   编译时多态：重载&lt;/p&gt;
-&lt;p&gt;   ​    运行时多态（编译类型和运行类型不一致）：&lt;/p&gt;
-&lt;p&gt;   ​            1.
-        
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://Wang-Ben.github.io/categories/java/"/>
-    
-    
-      <category term="多态" scheme="http://Wang-Ben.github.io/tags/%E5%A4%9A%E6%80%81/"/>
     
   </entry>
   
