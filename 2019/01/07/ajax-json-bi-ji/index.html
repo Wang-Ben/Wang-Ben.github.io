@@ -451,18 +451,24 @@ AJAX：1. 概念： ASynchronous JavaScript And XML    异步的JavaScript 和 X
         * 花括号保存对象：使用{}定义json 格式
         * 方括号保存数组：[]
     2. 获取数据:
-        1. json对象.键名
-        2. json对象[&quot;键名&quot;]
-        3. 数组对象[索引]
-        4. 遍历
+        1. json对象.键名    //var p1Name = person.name;
+        2. json对象[&quot;键名&quot;] //var p2Name = person[&quot;name&quot;];
+        3. 数组对象[索引]   //var p3Object = ps[0];
+        4. [遍历]
                  //1.定义基本格式
                 var person = {&quot;name&quot;: &quot;张三&quot;, age: 23, &#39;gender&#39;: true};
 
                 var ps = [{&quot;name&quot;: &quot;张三&quot;, &quot;age&quot;: 23, &quot;gender&quot;: true},
                     {&quot;name&quot;: &quot;李四&quot;, &quot;age&quot;: 24, &quot;gender&quot;: true},
                     {&quot;name&quot;: &quot;王五&quot;, &quot;age&quot;: 25, &quot;gender&quot;: false}];
-</code></pre><p>​<br>​<br>​<br>                    //获取person对象中所有的键和值<br>                    //for in 循环<br>                   /<em> for(var key in person){<br>                        //这样的方式获取不行。因为相当于  person.”name”<br>                        //alert(key + “:” + person.key);<br>                        alert(key+”:”+person[key]);<br>                    }</em>/</p>
-<pre><code>               //获取ps中的所有值
+
+              //获取person对象中所有的键和值，使用for in 循环
+                   /* for(var key in person){
+                        //这样的方式获取不行。key默认字符串因为相当于  person.&quot;name&quot;
+                         //alert(key + &quot;:&quot; + person.key);
+                        alert(key+&quot;:&quot;+person[key]);//字符串默认就有“”，不要加了
+                    }*/
+                //获取ps中的所有值
                 for (var i = 0; i &lt; ps.length; i++) {
                     var p = ps[i];
                     for(var key in p){
@@ -500,8 +506,10 @@ AJAX：1. 概念： ASynchronous JavaScript And XML    异步的JavaScript 和 X
                         * @JsonFormat(pattern = &quot;yyyy-MM-dd&quot;)
 
                 3. 复杂java对象转换
-                    1. List：数组
-                    2. Map：对象格式一致
+                    1. List：数组格式字符串[{&quot;name&quot;: &quot;张三&quot;, &quot;age&quot;: 23, &quot;gender&quot;: true},
+                                            {&quot;name&quot;: &quot;李四&quot;, &quot;age&quot;: 24, &quot;gender&quot;: true}]
+                    2. Map：对象格式一致，键值对格式
+                                    {&quot;name&quot;: &quot;李四&quot;, &quot;age&quot;: 24, &quot;gender&quot;: true}
 </code></pre><h1 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h1><pre><code>* 校验用户名是否存在
     1. 服务器响应的数据，在客户端使用时，要想当做json数据格式使用。有两种解决方案：
         1. $.get(type):将最后一个参数type指定为&quot;json&quot;
@@ -719,24 +727,25 @@ Redis1. 概念： redis是一款</div>
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2019/01/06/jquery-ji-chu-bi-ji/">
+                <a href="/2019/01/06/jquery-gao-ji-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="JQuery入门">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="JQuery高级">
                         
-                        <span class="card-title">JQuery入门</span>
+                        <span class="card-title">JQuery高级</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">目录1. JQuery 基础：
-    1. 概念
-    2. 快速入门
-    3. JQuery对象和JS对象区别与转换
-    4. 选择器
-    5. DOM操作
-    6. 案例
-JQuery 基础：1. 概念： 一个Jav</div>
+                    <div class="summary">目录：1. JQuery 高级
+    1. 动画
+    2. 遍历
+    3. 事件绑定
+    4. 案例
+    5. 插件
+JQuery 高级1. 动画
+    1. 三种方式显示和隐藏元素
+        1. 默认显示和隐藏</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-06
