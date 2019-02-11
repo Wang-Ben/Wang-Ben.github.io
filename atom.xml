@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Wang-Ben.github.io/"/>
-  <updated>2019-01-26T06:20:31.615Z</updated>
+  <updated>2019-02-11T05:01:17.149Z</updated>
   <id>http://Wang-Ben.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://Wang-Ben.github.io/2019/02/11/day02-collection-fan-xing-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/02/11/day02-collection-fan-xing-bi-ji/</id>
+    <published>2019-02-11T04:57:09.354Z</published>
+    <updated>2019-02-11T05:01:17.149Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;day02【Collection、泛型】&quot;&gt;&lt;a href=&quot;#day02【Collection、泛型】&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -77,7 +99,7 @@
     <link href="http://Wang-Ben.github.io/2019/01/26/2019-01-26-hui-zong/"/>
     <id>http://Wang-Ben.github.io/2019/01/26/2019-01-26-hui-zong/</id>
     <published>2019-01-25T16:12:43.000Z</published>
-    <updated>2019-01-27T15:50:17.800Z</updated>
+    <updated>2019-01-28T14:40:07.252Z</updated>
     
     <summary type="html">
     
@@ -125,31 +147,6 @@
     
     
       <category term="xml" scheme="http://Wang-Ben.github.io/tags/xml/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://Wang-Ben.github.io/2019/01/13/servlet-http-request-bi-ji/"/>
-    <id>http://Wang-Ben.github.io/2019/01/13/servlet-http-request-bi-ji/</id>
-    <published>2019-01-13T12:02:52.040Z</published>
-    <updated>2019-01-13T12:29:28.900Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;title: HTTP入门&lt;br&gt;date: 2019-01-04 00:12:43&lt;br&gt;tags: HTTP&lt;br&gt;categories: web基础&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
@@ -267,37 +264,6 @@
   </entry>
   
   <entry>
-    <title>JQuery高级</title>
-    <link href="http://Wang-Ben.github.io/2019/01/06/jquery-gao-ji-bi-ji/"/>
-    <id>http://Wang-Ben.github.io/2019/01/06/jquery-gao-ji-bi-ji/</id>
-    <published>2019-01-05T16:12:43.000Z</published>
-    <updated>2019-01-07T13:14:46.622Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;目录：&quot;&gt;&lt;a href=&quot;#目录：&quot; class=&quot;headerlink&quot; title=&quot;目录：&quot;&gt;&lt;/a&gt;目录：&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. JQuery 高级
-    1. 动画
-    2. 遍历
-    3. 事件绑定
-    4. 案例
-  
-        
-      
-    
-    </summary>
-    
-      <category term="前端基础" scheme="http://Wang-Ben.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="JQuery" scheme="http://Wang-Ben.github.io/tags/JQuery/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JQuery入门</title>
     <link href="http://Wang-Ben.github.io/2019/01/06/jquery-ji-chu-bi-ji/"/>
     <id>http://Wang-Ben.github.io/2019/01/06/jquery-ji-chu-bi-ji/</id>
@@ -355,6 +321,37 @@
     
     
       <category term="JSP" scheme="http://Wang-Ben.github.io/tags/JSP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JQuery高级</title>
+    <link href="http://Wang-Ben.github.io/2019/01/06/jquery-gao-ji-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/06/jquery-gao-ji-bi-ji/</id>
+    <published>2019-01-05T16:12:43.000Z</published>
+    <updated>2019-01-07T13:14:46.622Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;目录：&quot;&gt;&lt;a href=&quot;#目录：&quot; class=&quot;headerlink&quot; title=&quot;目录：&quot;&gt;&lt;/a&gt;目录：&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. JQuery 高级
+    1. 动画
+    2. 遍历
+    3. 事件绑定
+    4. 案例
+  
+        
+      
+    
+    </summary>
+    
+      <category term="前端基础" scheme="http://Wang-Ben.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JQuery" scheme="http://Wang-Ben.github.io/tags/JQuery/"/>
     
   </entry>
   
@@ -508,6 +505,34 @@
   </entry>
   
   <entry>
+    <title>HTTP入门</title>
+    <link href="http://Wang-Ben.github.io/2019/01/04/servlet-http-request-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/04/servlet-http-request-bi-ji/</id>
+    <published>2019-01-03T16:12:43.000Z</published>
+    <updated>2019-02-11T04:59:44.383Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;HTTP协议
+Request
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;\images\HTTP协议.bmp&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="web基础" scheme="http://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="HTTP" scheme="http://Wang-Ben.github.io/tags/HTTP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Servlet入门</title>
     <link href="http://Wang-Ben.github.io/2019/01/04/servlet1/"/>
     <id>http://Wang-Ben.github.io/2019/01/04/servlet1/</id>
@@ -536,11 +561,11 @@
   </entry>
   
   <entry>
-    <title>Bootstrap入门</title>
-    <link href="http://Wang-Ben.github.io/2019/01/04/bootstrap-bi-ji/"/>
-    <id>http://Wang-Ben.github.io/2019/01/04/bootstrap-bi-ji/</id>
+    <title>css</title>
+    <link href="http://Wang-Ben.github.io/2019/01/04/html-css-ke-tang-bi-ji/"/>
+    <id>http://Wang-Ben.github.io/2019/01/04/html-css-ke-tang-bi-ji/</id>
     <published>2019-01-03T16:12:43.000Z</published>
-    <updated>2019-01-12T15:38:30.791Z</updated>
+    <updated>2019-01-12T15:36:54.558Z</updated>
     
     <summary type="html">
     
@@ -548,44 +573,16 @@
       
         
         
-          &lt;h2 id=&quot;Bootstrap：&quot;&gt;&lt;a href=&quot;#Bootstrap：&quot; class=&quot;headerlink&quot; title=&quot;Bootstrap：&quot;&gt;&lt;/a&gt;Bootstrap：&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. 概念： 一个前端开发的框架，Bootstrap，来自
+          &lt;h2 id=&quot;CSS：页面美化和布局控制&quot;&gt;&lt;a href=&quot;#CSS：页面美化和布局控制&quot; class=&quot;headerlink&quot; title=&quot;CSS：页面美化和布局控制&quot;&gt;&lt;/a&gt;CSS：页面美化和布局控制&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. 概念： Cascading
         
       
     
     </summary>
     
-      <category term="前端框架" scheme="http://Wang-Ben.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/"/>
+      <category term="前端入门" scheme="http://Wang-Ben.github.io/categories/%E5%89%8D%E7%AB%AF%E5%85%A5%E9%97%A8/"/>
     
     
-      <category term="Bootstrap" scheme="http://Wang-Ben.github.io/tags/Bootstrap/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTTP</title>
-    <link href="http://Wang-Ben.github.io/2019/01/04/response-bi-ji/"/>
-    <id>http://Wang-Ben.github.io/2019/01/04/response-bi-ji/</id>
-    <published>2019-01-03T16:12:43.000Z</published>
-    <updated>2019-01-13T12:31:54.824Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;1. HTTP协议：响应消息
-2. Response对象
-3.
-        
-      
-    
-    </summary>
-    
-      <category term="web基础" scheme="http://Wang-Ben.github.io/categories/web%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="HTTP" scheme="http://Wang-Ben.github.io/tags/HTTP/"/>
+      <category term="css" scheme="http://Wang-Ben.github.io/tags/css/"/>
     
   </entry>
   
